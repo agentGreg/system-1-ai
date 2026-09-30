@@ -13,6 +13,11 @@ typed options, no text generation) with generative "thinking" LLMs on everyday b
   TypeSafe's Jev Router (`typesafe/jev-router`, which picks another model and effort per request), the two models it
   picked called directly (GPT-6 Luna, DeepSeek V4.1 Flash), and cloud reasoning models (Claude Sonnet 5.5, GPT-6.1 Sol,
   Gemini 3.8 Flash). Accuracy, end-to-end latency from Poland, tokens and exact cost per call. See `results.md` there.
+- `experiments/03-extended-set/`: 200 Polish decisions (the 30 above plus 170 new, six categories including
+  irritation level and phishing), labels checked blind by two LLM annotators from different vendors (198/200 agreed,
+  2 disputed items left for human adjudication). basal-1.0 (local), raw Jev 1.13 via the System One endpoint (both
+  option orders), Gemini 3.8 Flash, Mistral Medium 3.1 and local Qwen3-14B: accuracy with 95% intervals, latency,
+  cost, coverage at confidence thresholds and calibration. See `results.md` there.
 
 ## Running
 
@@ -29,7 +34,17 @@ cd experiments/01-basal-vs-thinking
 Experiment 02 needs only Python 3 (standard library) and an OpenRouter key in the macOS keychain
 (`security add-generic-password -s openrouter-api-key -w`); see `run_all_chat.sh` there.
 
+Experiment 03: `python build_dataset.py`, then `annotate.py`, `run_basal.py`, `run_jev.py`, `run_cloud.py`,
+`run_llm.py` and `analyze.py` (commands in the docstrings; the API scripts use the same keychain entry).
+
 `basal_prompt.py` is a verbatim copy of `basal/prompt.py` from https://github.com/rkinas/basal (Apache-2.0).
+
+## Use of model outputs
+
+Raw model outputs in this repo are published for evaluation only. Do not use them to train, fine-tune or distill
+models. Jev results come from the alpha endpoint https://openrouter.ai/api/alpha/decisions (typesafe/jev-1.13) and are
+a snapshot as of 2026-09-30; this repo is independent and not affiliated with or endorsed by TypeSafe AI, OpenRouter
+or any other model provider.
 
 ## License
 
