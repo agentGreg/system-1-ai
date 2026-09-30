@@ -1,0 +1,14 @@
+{
+ "system": "think seed2",
+ "model_path": "models/Qwen3-14B-mlx-4bit",
+ "thinking": true,
+ "load_s": 0.5458296667784452,
+ "max_tokens": 8192,
+ "seed": 2,
+ "hardware": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.8"
+ }
+}

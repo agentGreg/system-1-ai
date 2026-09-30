@@ -1,0 +1,14 @@
+{
+ "system": "Qwen3-14B MLX 4-bit, thinking OFF",
+ "model_path": "models/Qwen3-14B-mlx-4bit",
+ "thinking": false,
+ "load_s": 0.5430994587950408,
+ "max_tokens": 8192,
+ "seed": 0,
+ "hardware": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.8"
+ }
+}

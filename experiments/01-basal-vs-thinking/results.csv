@@ -1,0 +1,121 @@
+system,id,category,tricky,gold,gold_option,pred,pred_option,correct,p_pred,latency_ms,output_tokens,answer_text
+basal-1.0-4.5B,R01,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.9897,112.4,0,
+basal-1.0-4.5B,R02,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.996,106.4,0,
+basal-1.0-4.5B,R03,reklamacja,True,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.9721,235.0,0,
+basal-1.0-4.5B,R04,reklamacja,True,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.9701,128.1,0,
+basal-1.0-4.5B,R05,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.9968,125.2,0,
+basal-1.0-4.5B,R06,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.9673,117.8,0,
+basal-1.0-4.5B,R07,reklamacja,True,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.9965,215.2,0,
+basal-1.0-4.5B,R08,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.9375,118.9,0,
+basal-1.0-4.5B,R09,reklamacja,True,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.9853,121.8,0,
+basal-1.0-4.5B,R10,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.9965,121.5,0,
+basal-1.0-4.5B,D01,routing,False,2,Dostawa i logistyka,2,Dostawa i logistyka,True,0.9974,116.7,0,
+basal-1.0-4.5B,D02,routing,False,1,Faktury i płatności,1,Faktury i płatności,True,0.9959,120.6,0,
+basal-1.0-4.5B,D03,routing,False,3,Wsparcie techniczne,3,Wsparcie techniczne,True,0.9993,114.2,0,
+basal-1.0-4.5B,D04,routing,True,4,"Sprzedaż (oferty, ceny, nowe zamówienia)",4,"Sprzedaż (oferty, ceny, nowe zamówienia)",True,0.9974,112.2,0,
+basal-1.0-4.5B,D05,routing,False,0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",True,0.962,105.3,0,
+basal-1.0-4.5B,D06,routing,False,1,Faktury i płatności,1,Faktury i płatności,True,0.9809,217.8,0,
+basal-1.0-4.5B,D07,routing,False,4,"Sprzedaż (oferty, ceny, nowe zamówienia)",3,Wsparcie techniczne,False,0.5468,111.3,0,
+basal-1.0-4.5B,D08,routing,True,2,Dostawa i logistyka,2,Dostawa i logistyka,True,0.9984,111.7,0,
+basal-1.0-4.5B,D09,routing,False,3,Wsparcie techniczne,3,Wsparcie techniczne,True,0.9846,117.7,0,
+basal-1.0-4.5B,D10,routing,False,0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",True,0.9972,112.3,0,
+basal-1.0-4.5B,E01,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,0.8325,114.9,0,
+basal-1.0-4.5B,E02,eskalacja,False,1,"Nie, można obsłużyć automatycznie",1,"Nie, można obsłużyć automatycznie",True,0.9879,115.6,0,
+basal-1.0-4.5B,E03,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,0.9935,118.6,0,
+basal-1.0-4.5B,E04,eskalacja,True,1,"Nie, można obsłużyć automatycznie",1,"Nie, można obsłużyć automatycznie",True,0.9031,115.6,0,
+basal-1.0-4.5B,E05,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,0.9893,121.1,0,
+basal-1.0-4.5B,K01,kompletnosc,False,0,"Tak, zgłoszenie jest kompletne",0,"Tak, zgłoszenie jest kompletne",True,0.7243,125.6,0,
+basal-1.0-4.5B,K02,kompletnosc,False,1,"Nie, zgłoszeniu czegoś brakuje",0,"Tak, zgłoszenie jest kompletne",False,0.8393,130.1,0,
+basal-1.0-4.5B,K03,kompletnosc,True,1,"Nie, zgłoszeniu czegoś brakuje",0,"Tak, zgłoszenie jest kompletne",False,0.7567,117.2,0,
+basal-1.0-4.5B,K04,kompletnosc,False,0,"Tak, zgłoszenie jest kompletne",0,"Tak, zgłoszenie jest kompletne",True,0.8986,130.1,0,
+basal-1.0-4.5B,K05,kompletnosc,False,1,"Nie, zgłoszeniu czegoś brakuje",1,"Nie, zgłoszeniu czegoś brakuje",True,0.9473,119.5,0,
+basal-1.0-1.5B,R01,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.8412,44.6,0,
+basal-1.0-1.5B,R02,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.9667,42.3,0,
+basal-1.0-1.5B,R03,reklamacja,True,0,"Tak, to reklamacja",1,"Nie, to nie jest reklamacja",False,0.5404,52.5,0,
+basal-1.0-1.5B,R04,reklamacja,True,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.6822,49.0,0,
+basal-1.0-1.5B,R05,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.9607,48.9,0,
+basal-1.0-1.5B,R06,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.5515,48.1,0,
+basal-1.0-1.5B,R07,reklamacja,True,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.9607,53.1,0,
+basal-1.0-1.5B,R08,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,0.6696,45.3,0,
+basal-1.0-1.5B,R09,reklamacja,True,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.9093,49.5,0,
+basal-1.0-1.5B,R10,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,0.984,51.8,0,
+basal-1.0-1.5B,D01,routing,False,2,Dostawa i logistyka,2,Dostawa i logistyka,True,0.9897,47.5,0,
+basal-1.0-1.5B,D02,routing,False,1,Faktury i płatności,1,Faktury i płatności,True,0.993,51.0,0,
+basal-1.0-1.5B,D03,routing,False,3,Wsparcie techniczne,3,Wsparcie techniczne,True,0.9947,50.1,0,
+basal-1.0-1.5B,D04,routing,True,4,"Sprzedaż (oferty, ceny, nowe zamówienia)",4,"Sprzedaż (oferty, ceny, nowe zamówienia)",True,0.9968,44.9,0,
+basal-1.0-1.5B,D05,routing,False,0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",True,0.9602,42.5,0,
+basal-1.0-1.5B,D06,routing,False,1,Faktury i płatności,1,Faktury i płatności,True,0.9352,50.2,0,
+basal-1.0-1.5B,D07,routing,False,4,"Sprzedaż (oferty, ceny, nowe zamówienia)",4,"Sprzedaż (oferty, ceny, nowe zamówienia)",True,0.9572,45.3,0,
+basal-1.0-1.5B,D08,routing,True,2,Dostawa i logistyka,2,Dostawa i logistyka,True,0.9929,44.2,0,
+basal-1.0-1.5B,D09,routing,False,3,Wsparcie techniczne,3,Wsparcie techniczne,True,0.9895,51.7,0,
+basal-1.0-1.5B,D10,routing,False,0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",True,0.8607,44.2,0,
+basal-1.0-1.5B,E01,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,0.8032,48.2,0,
+basal-1.0-1.5B,E02,eskalacja,False,1,"Nie, można obsłużyć automatycznie",1,"Nie, można obsłużyć automatycznie",True,0.9337,51.6,0,
+basal-1.0-1.5B,E03,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,0.8204,51.8,0,
+basal-1.0-1.5B,E04,eskalacja,True,1,"Nie, można obsłużyć automatycznie",1,"Nie, można obsłużyć automatycznie",True,0.7394,54.7,0,
+basal-1.0-1.5B,E05,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,0.882,52.1,0,
+basal-1.0-1.5B,K01,kompletnosc,False,0,"Tak, zgłoszenie jest kompletne",0,"Tak, zgłoszenie jest kompletne",True,0.5809,54.7,0,
+basal-1.0-1.5B,K02,kompletnosc,False,1,"Nie, zgłoszeniu czegoś brakuje",0,"Tak, zgłoszenie jest kompletne",False,0.6364,52.9,0,
+basal-1.0-1.5B,K03,kompletnosc,True,1,"Nie, zgłoszeniu czegoś brakuje",0,"Tak, zgłoszenie jest kompletne",False,0.5864,48.2,0,
+basal-1.0-1.5B,K04,kompletnosc,False,0,"Tak, zgłoszenie jest kompletne",0,"Tak, zgłoszenie jest kompletne",True,0.787,52.9,0,
+basal-1.0-1.5B,K05,kompletnosc,False,1,"Nie, zgłoszeniu czegoś brakuje",1,"Nie, zgłoszeniu czegoś brakuje",True,0.5636,53.1,0,
+Qwen3-14B thinking ON,R01,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,3865.6,221,A
+Qwen3-14B thinking ON,R02,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,2757.2,154,"B. Nie, to nie jest reklamacja"
+Qwen3-14B thinking ON,R03,reklamacja,True,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,3734.7,211,A
+Qwen3-14B thinking ON,R04,reklamacja,True,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,3989.0,228,A
+Qwen3-14B thinking ON,R05,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,3107.1,175,"B. Nie, to nie jest reklamacja"
+Qwen3-14B thinking ON,R06,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,4554.6,264,"A. Tak, to reklamacja"
+Qwen3-14B thinking ON,R07,reklamacja,True,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,3527.2,201,B.
+Qwen3-14B thinking ON,R08,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,3389.3,189,A
+Qwen3-14B thinking ON,R09,reklamacja,True,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,4935.7,283,B.
+Qwen3-14B thinking ON,R10,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,3713.1,212,"B. Nie, to nie jest reklamacja"
+Qwen3-14B thinking ON,D01,routing,False,2,Dostawa i logistyka,2,Dostawa i logistyka,True,nan,5119.3,296,C
+Qwen3-14B thinking ON,D02,routing,False,1,Faktury i płatności,1,Faktury i płatności,True,nan,2695.9,149,B. Faktury i płatności
+Qwen3-14B thinking ON,D03,routing,False,3,Wsparcie techniczne,3,Wsparcie techniczne,True,nan,3637.2,205,D. Wsparcie techniczne
+Qwen3-14B thinking ON,D04,routing,True,4,"Sprzedaż (oferty, ceny, nowe zamówienia)",4,"Sprzedaż (oferty, ceny, nowe zamówienia)",True,nan,5449.7,316,E
+Qwen3-14B thinking ON,D05,routing,False,0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",True,nan,5117.0,296,A
+Qwen3-14B thinking ON,D06,routing,False,1,Faktury i płatności,1,Faktury i płatności,True,nan,4664.7,266,B
+Qwen3-14B thinking ON,D07,routing,False,4,"Sprzedaż (oferty, ceny, nowe zamówienia)",3,Wsparcie techniczne,False,nan,6392.2,374,D. Wsparcie techniczne
+Qwen3-14B thinking ON,D08,routing,True,2,Dostawa i logistyka,2,Dostawa i logistyka,True,nan,6100.9,355,C
+Qwen3-14B thinking ON,D09,routing,False,3,Wsparcie techniczne,3,Wsparcie techniczne,True,nan,4774.2,276,D
+Qwen3-14B thinking ON,D10,routing,False,0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",True,nan,4482.7,258,A
+Qwen3-14B thinking ON,E01,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,nan,3889.5,221,A
+Qwen3-14B thinking ON,E02,eskalacja,False,1,"Nie, można obsłużyć automatycznie",1,"Nie, można obsłużyć automatycznie",True,nan,4052.0,232,"B. Nie, można obsłużyć automatycznie"
+Qwen3-14B thinking ON,E03,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,nan,3612.4,206,"A. Tak, eskalować do człowieka"
+Qwen3-14B thinking ON,E04,eskalacja,True,1,"Nie, można obsłużyć automatycznie",1,"Nie, można obsłużyć automatycznie",True,nan,3713.7,213,"B. Nie, można obsłużyć automatycznie"
+Qwen3-14B thinking ON,E05,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,nan,4860.8,282,"A. Tak, eskalować do człowieka"
+Qwen3-14B thinking ON,K01,kompletnosc,False,0,"Tak, zgłoszenie jest kompletne",0,"Tak, zgłoszenie jest kompletne",True,nan,4678.0,270,"A. Tak, zgłoszenie jest kompletne"
+Qwen3-14B thinking ON,K02,kompletnosc,False,1,"Nie, zgłoszeniu czegoś brakuje",1,"Nie, zgłoszeniu czegoś brakuje",True,nan,3677.4,209,"B. Nie, zgłoszeniu czegoś brakuje"
+Qwen3-14B thinking ON,K03,kompletnosc,True,1,"Nie, zgłoszeniu czegoś brakuje",1,"Nie, zgłoszeniu czegoś brakuje",True,nan,4642.1,268,"B. Nie, zgłoszeniu czegoś brakuje"
+Qwen3-14B thinking ON,K04,kompletnosc,False,0,"Tak, zgłoszenie jest kompletne",0,"Tak, zgłoszenie jest kompletne",True,nan,2732.4,151,"A. Tak, zgłoszenie jest kompletne"
+Qwen3-14B thinking ON,K05,kompletnosc,False,1,"Nie, zgłoszeniu czegoś brakuje",1,"Nie, zgłoszeniu czegoś brakuje",True,nan,3687.0,209,"B. Nie, zgłoszeniu czegoś brakuje"
+Qwen3-14B thinking OFF,R01,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,279.1,2,A
+Qwen3-14B thinking OFF,R02,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,290.0,3,B.
+Qwen3-14B thinking OFF,R03,reklamacja,True,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,289.6,2,A
+Qwen3-14B thinking OFF,R04,reklamacja,True,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,271.9,2,A
+Qwen3-14B thinking OFF,R05,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,289.4,3,B.
+Qwen3-14B thinking OFF,R06,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,281.1,2,A
+Qwen3-14B thinking OFF,R07,reklamacja,True,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,300.0,3,B.
+Qwen3-14B thinking OFF,R08,reklamacja,False,0,"Tak, to reklamacja",0,"Tak, to reklamacja",True,nan,283.1,2,A
+Qwen3-14B thinking OFF,R09,reklamacja,True,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,306.7,3,B.
+Qwen3-14B thinking OFF,R10,reklamacja,False,1,"Nie, to nie jest reklamacja",1,"Nie, to nie jest reklamacja",True,nan,295.9,3,B.
+Qwen3-14B thinking OFF,D01,routing,False,2,Dostawa i logistyka,2,Dostawa i logistyka,True,nan,279.2,2,C
+Qwen3-14B thinking OFF,D02,routing,False,1,Faktury i płatności,1,Faktury i płatności,True,nan,276.8,2,B
+Qwen3-14B thinking OFF,D03,routing,False,3,Wsparcie techniczne,3,Wsparcie techniczne,True,nan,280.1,2,D
+Qwen3-14B thinking OFF,D04,routing,True,4,"Sprzedaż (oferty, ceny, nowe zamówienia)",4,"Sprzedaż (oferty, ceny, nowe zamówienia)",True,nan,279.4,2,E
+Qwen3-14B thinking OFF,D05,routing,False,0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",True,nan,280.0,2,A
+Qwen3-14B thinking OFF,D06,routing,False,1,Faktury i płatności,1,Faktury i płatności,True,nan,289.1,2,B
+Qwen3-14B thinking OFF,D07,routing,False,4,"Sprzedaż (oferty, ceny, nowe zamówienia)",3,Wsparcie techniczne,False,nan,389.8,9,D. Wsparcie techniczne
+Qwen3-14B thinking OFF,D08,routing,True,2,Dostawa i logistyka,2,Dostawa i logistyka,True,nan,373.7,2,C
+Qwen3-14B thinking OFF,D09,routing,False,3,Wsparcie techniczne,3,Wsparcie techniczne,True,nan,272.8,2,D
+Qwen3-14B thinking OFF,D10,routing,False,0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",0,"Reklamacje (wady, uszkodzenia, niezgodność towaru z zamówieniem)",True,nan,278.0,2,A
+Qwen3-14B thinking OFF,E01,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,nan,287.2,2,A
+Qwen3-14B thinking OFF,E02,eskalacja,False,1,"Nie, można obsłużyć automatycznie",1,"Nie, można obsłużyć automatycznie",True,nan,457.7,13,"B. Nie, można obsłużyć automatycznie"
+Qwen3-14B thinking OFF,E03,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,nan,302.4,2,A
+Qwen3-14B thinking OFF,E04,eskalacja,True,1,"Nie, można obsłużyć automatycznie",1,"Nie, można obsłużyć automatycznie",True,nan,454.0,13,"B. Nie, można obsłużyć automatycznie"
+Qwen3-14B thinking OFF,E05,eskalacja,False,0,"Tak, eskalować do człowieka",0,"Tak, eskalować do człowieka",True,nan,283.5,2,A
+Qwen3-14B thinking OFF,K01,kompletnosc,False,0,"Tak, zgłoszenie jest kompletne",1,"Nie, zgłoszeniu czegoś brakuje",False,nan,314.0,3,B.
+Qwen3-14B thinking OFF,K02,kompletnosc,False,1,"Nie, zgłoszeniu czegoś brakuje",1,"Nie, zgłoszeniu czegoś brakuje",True,nan,534.9,16,"B. Nie, zgłoszeniu czegoś brakuje"
+Qwen3-14B thinking OFF,K03,kompletnosc,True,1,"Nie, zgłoszeniu czegoś brakuje",1,"Nie, zgłoszeniu czegoś brakuje",True,nan,525.7,16,"B. Nie, zgłoszeniu czegoś brakuje"
+Qwen3-14B thinking OFF,K04,kompletnosc,False,0,"Tak, zgłoszenie jest kompletne",0,"Tak, zgłoszenie jest kompletne",True,nan,476.5,13,"A. Tak, zgłoszenie jest kompletne"
+Qwen3-14B thinking OFF,K05,kompletnosc,False,1,"Nie, zgłoszeniu czegoś brakuje",1,"Nie, zgłoszeniu czegoś brakuje",True,nan,524.1,16,"B. Nie, zgłoszeniu czegoś brakuje"
