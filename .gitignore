@@ -6,3 +6,5 @@ hf_cache/
 models/
 *.safetensors
 *.gguf
+.env
+.env.*
