@@ -1,0 +1,22 @@
+{
+ "system": "gemini-3.8-flash_medium",
+ "model_requested": "google/gemini-3.8-flash",
+ "reasoning": {
+  "effort": "medium"
+ },
+ "max_tokens": 8192,
+ "models_served": [
+  "google/gemini-3.8-flash"
+ ],
+ "providers": [
+  "Google",
+  "Google AI Studio"
+ ],
+ "temperature": "provider default (not sent)",
+ "date_utc": "2026-09-30T21:02:36.286250+00:00",
+ "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+ "client": "Poland, residential connection",
+ "n": 204,
+ "calls_sequential": true,
+ "streaming": false
+}

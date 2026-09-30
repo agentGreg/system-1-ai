@@ -1,0 +1,25 @@
+{
+ "system": "Jev 1.13 (raw System One endpoint)",
+ "model_requested": "typesafe/jev-1.13",
+ "models_served": [
+  "typesafe/jev-1.13-20260917"
+ ],
+ "endpoint": "https://openrouter.ai/api/alpha/decisions",
+ "orders": 2,
+ "date_utc": "2026-09-30T20:50:22.259666+00:00",
+ "client": "Poland, residential connection",
+ "calls_sequential": true,
+ "n": 17,
+ "hardware_client": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.2"
+ },
+ "choice_keys": "per item (decisions.jsonl 'keys')",
+ "noul_criteria_keys": [
+  "true",
+  "false"
+ ],
+ "score_criteria": "list of level texts; answer keys are list positions"
+}

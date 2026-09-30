@@ -1,0 +1,14 @@
+{
+ "system": "Qwen3-14B thinking",
+ "model_path": "/private/tmp/claude-501/-Users-greg-apps-greg-personal-brand/299d0903-1b4f-4db7-9ece-2cab81097a18/scratchpad/Qwen3-14B-mlx-4bit",
+ "thinking": true,
+ "load_s": 0.9827749999240041,
+ "max_tokens": 8192,
+ "seed": 0,
+ "hardware": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.8"
+ }
+}

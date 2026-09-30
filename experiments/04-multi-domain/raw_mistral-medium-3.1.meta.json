@@ -1,0 +1,19 @@
+{
+ "system": "mistral-medium-3.1",
+ "model_requested": "mistralai/mistral-medium-3.1",
+ "reasoning": null,
+ "max_tokens": 8192,
+ "models_served": [
+  "mistralai/mistral-medium-3.1"
+ ],
+ "providers": [
+  "Mistral"
+ ],
+ "temperature": "provider default (not sent)",
+ "date_utc": "2026-09-30T20:52:40.634278+00:00",
+ "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+ "client": "Poland, residential connection",
+ "n": 204,
+ "calls_sequential": true,
+ "streaming": false
+}

@@ -18,6 +18,11 @@ typed options, no text generation) with generative "thinking" LLMs on everyday b
   2 disputed items left for human adjudication). basal-1.0 (local), raw Jev 1.13 via the System One endpoint (both
   option orders), Gemini 3.8 Flash, Mistral Medium 3.1 and local Qwen3-14B: accuracy with 95% intervals, latency,
   cost, coverage at confidence thresholds and calibration. See `results.md` there.
+- `experiments/04-multi-domain/`: 204 Polish business decisions across 12 domains (public administration, law firm
+  intake, HR, clinic administration, insurance, banking/AML, logistics, IT security, manufacturing quality,
+  university, housing community, marketplace moderation), yes/no, choice and ordinal score questions, 60 with
+  explicit rules (deadlines, thresholds, exceptions). Same annotators, systems and protocol as experiment 03, plus
+  per-domain, per-type and rule-based vs not breakdowns. See `results.md` there.
 
 ## Running
 
@@ -36,6 +41,7 @@ Experiment 02 needs only Python 3 (standard library) and an OpenRouter key in th
 
 Experiment 03: `python build_dataset.py`, then `annotate.py`, `run_basal.py`, `run_jev.py`, `run_cloud.py`,
 `run_llm.py` and `analyze.py` (commands in the docstrings; the API scripts use the same keychain entry).
+Experiment 04 works the same way (`build_dataset.py` reads `dataset_src/`; see the end of its `results.md`).
 
 `basal_prompt.py` is a verbatim copy of `basal/prompt.py` from https://github.com/rkinas/basal (Apache-2.0).
 
