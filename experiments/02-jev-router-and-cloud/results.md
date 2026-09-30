@@ -161,3 +161,40 @@ loaded; cloud numbers are end to end over the internet from Poland and include q
 - `log_*.txt`: console logs of the full runs
 - `costs.jsonl`: per-call cost ledger for everything run in this experiment, including smoke tests
 - `smoke/`: 2-item smoke tests, including the failed reasoning-off attempts (HTTP 400)
+
+
+## Raw Jev (added 2026-09-30, run from the main session)
+
+`typesafe/jev-1.13` on `POST https://openrouter.ai/api/alpha/decisions` (served as `typesafe/jev-1.13-20260917`,
+provider TypeSafe), System One request format, one question per call. Yes/no items sent as `noul` with
+`criteria {true, false}`; choice items with keys A-E. Script: `run_jev.py`. Snapshot of the alpha endpoint on this date.
+
+| run | accuracy | median latency | p90 latency | $ per 1,000 decisions |
+|---|---|---|---|---|
+| original option order | 30/30 | 290 ms | 330 ms | 0.0194 |
+| reversed option order | 30/30 | 311 ms | 375 ms | 0.0194 |
+| yes/no sent as 2-option choice | 30/30 | 289 ms | 330 ms | 0.0199 |
+| two-order average | 30/30 | | | |
+
+Latency is end to end from Poland (residential connection), so it includes the network round trip.
+No prediction changed between option orders.
+
+**Coverage at basal's shipped thresholds** (two-order average; Jev's confidences are the vendor's own, not recalibrated):
+
+| system | threshold | decided alone | wrong among those |
+|---|---|---|---|
+| Jev 1.13 | >= 0.913 | 28/30 | 0 |
+| Jev 1.13 | >= 0.744 | 30/30 | 0 |
+| basal-4.5B (exp 01) | >= 0.913 | 23/30 | 0 |
+| basal-4.5B (exp 01) | >= 0.744 | 28/30 | 2 (K02, K03) |
+
+The two items below Jev's 0.913 are completeness-rule items (K02 0.905, K05 0.905); K03 is at 0.915. Jev got K02 and
+K03 right, the two completeness items both basal models missed, and D07 (the debatable Wi-Fi router label), which
+basal-4.5B and both Qwen3 runs missed.
+
+**basal vs Jev on these 30 items.** Jev 30/30 against 27/30 for both basal models, and it decides more items alone at
+the strict threshold (28 against 23) with no errors in either case. basal's advantage here is that it runs locally
+(118 ms for 4.5B, 50 ms for 1.5B on an M5 Max; 12.5 ms on an H100 per its report) with no data leaving the machine,
+and it is open (Apache-2.0). This contrasts with basal's own report, where basal-4.5B leads Jev 0.884 to 0.780 on the
+author's unpublished Polish set; n=30 with our own labels is far too small to settle that, which is what experiment 03
+(about 200 items, independently checked labels) is for.

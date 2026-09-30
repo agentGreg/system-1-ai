@@ -1,0 +1,10 @@
+{
+ "system": "Jev raw",
+ "model_requested": "typesafe/jev-1.13",
+ "endpoint": "https://openrouter.ai/api/alpha/decisions",
+ "order": "original",
+ "noul_as_choice": false,
+ "date_utc": "2026-09-30T19:50:03.708060+00:00",
+ "client_location": "Poland, residential connection",
+ "n": 30
+}
