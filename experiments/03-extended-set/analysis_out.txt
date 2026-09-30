@@ -1,0 +1,147 @@
+## Annotation agreement (all 200 items)
+
+| pair | agreement | Cohen's kappa |
+|---|---|---|
+| author vs Claude Opus 5.5 | 199/200 (99.5%) | 0.995 |
+| author vs GPT-6.1 Sol | 198/200 (99.0%) | 0.989 |
+| Claude Opus 5.5 vs GPT-6.1 Sol | 199/200 (99.5%) | 0.995 |
+
+3-way agreement (clean set): 198/200 (99.0%)
+both annotators agree with each other but not with the author: 1
+
+| category | n | 3-way agree | author-A1 kappa | author-A2 kappa | A1-A2 kappa |
+|---|---|---|---|---|---|
+| reklamacja | 40 | 40 | 1.00 | 1.00 | 1.00 |
+| routing | 40 | 40 | 1.00 | 1.00 | 1.00 |
+| eskalacja | 40 | 40 | 1.00 | 1.00 | 1.00 |
+| kompletnosc | 40 | 39 | 0.95 | 0.95 | 1.00 |
+| irytacja | 20 | 19 | 1.00 | 0.93 | 0.93 |
+| phishing | 20 | 20 | 1.00 | 1.00 | 1.00 |
+
+tricky items in clean set: 63/63; non-tricky: 135/137
+exp01 items in clean set: 30/30
+
+## Accuracy on the clean set (n=198), Wilson 95% CI
+
+| system | n run | overall | reklamacja | routing | eskalacja | kompletnosc | irytacja | phishing | tricky | median ms | p90 ms | $ / 1,000 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| basal-1.0-4.5B (local, 2 orders) | 198 | 86.9% (172/198) [81-91] | 39/40 [87-100] | 36/40 [77-96] | 37/40 [80-97] | 33/39 [70-93] | 13/19 [46-85] | 14/20 [48-85] | 44/63 | 116 | 131 | 0 (local) |
+| basal-1.0-1.5B (local, 2 orders) | 198 | 79.3% (157/198) [73-84] | 32/40 [65-90] | 38/40 [83-99] | 38/40 [83-99] | 23/39 [43-73] | 12/19 [41-81] | 14/20 [48-85] | 41/63 | 46 | 52 | 0 (local) |
+| Jev 1.13 raw (2 orders avg) | 198 | 98.5% (195/198) [96-99] | 40/40 [91-100] | 39/40 [87-100] | 40/40 [91-100] | 38/39 [87-100] | 19/19 [83-100] | 19/20 [76-99] | 60/63 | 584 | 677 | 0.038 |
+| Jev 1.13 raw (order 1 only) | 198 | 98.0% (194/198) [95-99] | 40/40 [91-100] | 39/40 [87-100] | 40/40 [91-100] | 38/39 [87-100] | 19/19 [83-100] | 18/20 [70-97] | 59/63 | 288 | 362 | 0.019 |
+| Gemini 3.8 Flash (thinking medium) | 198 | 100.0% (198/198) [98-100] | 40/40 [91-100] | 40/40 [91-100] | 40/40 [91-100] | 39/39 [91-100] | 19/19 [83-100] | 20/20 [84-100] | 63/63 | 4225 | 11958 | 0.872 |
+| Mistral Medium 3.1 (no reasoning) | 198 | 96.0% (190/198) [92-98] | 40/40 [91-100] | 40/40 [91-100] | 37/40 [80-97] | 35/39 [76-96] | 19/19 [83-100] | 19/20 [76-99] | 58/63 | 396 | 563 | 0.099 |
+| Qwen3-14B thinking (local MLX 4-bit) | 198 | 94.4% (187/198) [90-97] | 40/40 [91-100] | 38/40 [83-99] | 39/40 [87-100] | 39/39 [91-100] | 16/19 [62-94] | 15/20 [53-89] | 56/63 | 4136 | 6365 | 0 (local) |
+
+## Accuracy on the all set (n=200), Wilson 95% CI
+
+| system | n run | overall | reklamacja | routing | eskalacja | kompletnosc | irytacja | phishing | tricky | median ms | p90 ms | $ / 1,000 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| basal-1.0-4.5B (local, 2 orders) | 200 | 86.5% (173/200) [81-91] | 39/40 [87-100] | 36/40 [77-96] | 37/40 [80-97] | 34/40 [71-93] | 13/20 [43-82] | 14/20 [48-85] | 44/63 | 116 | 131 | 0 (local) |
+| basal-1.0-1.5B (local, 2 orders) | 200 | 79.0% (158/200) [73-84] | 32/40 [65-90] | 38/40 [83-99] | 38/40 [83-99] | 24/40 [45-74] | 12/20 [39-78] | 14/20 [48-85] | 41/63 | 46 | 52 | 0 (local) |
+| Jev 1.13 raw (2 orders avg) | 200 | 98.0% (196/200) [95-99] | 40/40 [91-100] | 39/40 [87-100] | 40/40 [91-100] | 39/40 [87-100] | 19/20 [76-99] | 19/20 [76-99] | 60/63 | 585 | 676 | 0.038 |
+| Jev 1.13 raw (order 1 only) | 200 | 97.5% (195/200) [94-99] | 40/40 [91-100] | 39/40 [87-100] | 40/40 [91-100] | 39/40 [87-100] | 19/20 [76-99] | 18/20 [70-97] | 59/63 | 288 | 362 | 0.019 |
+| Gemini 3.8 Flash (thinking medium) | 200 | 99.0% (198/200) [96-100] | 40/40 [91-100] | 40/40 [91-100] | 40/40 [91-100] | 39/40 [87-100] | 19/20 [76-99] | 20/20 [84-100] | 63/63 | 4301 | 12041 | 0.909 |
+| Mistral Medium 3.1 (no reasoning) | 200 | 95.5% (191/200) [92-98] | 40/40 [91-100] | 40/40 [91-100] | 37/40 [80-97] | 36/40 [77-96] | 19/20 [76-99] | 19/20 [76-99] | 58/63 | 396 | 562 | 0.099 |
+| Qwen3-14B thinking (local MLX 4-bit) | 200 | 94.0% (188/200) [90-97] | 40/40 [91-100] | 38/40 [83-99] | 39/40 [87-100] | 40/40 [91-100] | 16/20 [58-92] | 15/20 [53-89] | 56/63 | 4136 | 6364 | 0 (local) |
+
+## Original 30 items of experiment 01 (author labels = exp 01 gold)
+
+| system | all 30 | clean subset of the 30 |
+|---|---|---|
+| basal-1.0-4.5B (local, 2 orders) | 27/30 | 27/30 |
+| basal-1.0-1.5B (local, 2 orders) | 27/30 | 27/30 |
+| Jev 1.13 raw (2 orders avg) | 30/30 | 30/30 |
+| Jev 1.13 raw (order 1 only) | 30/30 | 30/30 |
+| Gemini 3.8 Flash (thinking medium) | 30/30 | 30/30 |
+| Mistral Medium 3.1 (no reasoning) | 29/30 | 29/30 |
+| Qwen3-14B thinking (local MLX 4-bit) | 29/30 | 29/30 |
+
+## Annotators scored against the author label (all 200)
+
+- Claude Opus 5.5: 99.5% (199/200) [97-100]; cost $0.824; median reasoning tokens 14, items with >0 reasoning tokens 108
+- GPT-6.1 Sol: 99.0% (198/200) [96-100]; cost $0.241; median reasoning tokens 0, items with >0 reasoning tokens 70
+
+## Coverage at basal's frozen thresholds (clean set)
+
+| system | threshold | decided alone | share | wrong among decided | error rate [95% CI] | to a human | errors caught |
+|---|---|---|---|---|---|---|---|
+| basal-1.0-4.5B (local, 2 orders) | 0.913 | 133/198 | 67.2% | 2 | 1.5% [0.4-5.3] | 65 | 24/26 |
+| basal-1.0-4.5B (local, 2 orders) | 0.744 | 177/198 | 89.4% | 16 | 9.0% [5.6-14.2] | 21 | 10/26 |
+| basal-1.0-1.5B (local, 2 orders) | 0.913 | 67/198 | 33.8% | 2 | 3.0% [0.8-10.2] | 131 | 39/41 |
+| basal-1.0-1.5B (local, 2 orders) | 0.744 | 127/198 | 64.1% | 8 | 6.3% [3.2-11.9] | 71 | 33/41 |
+| Jev 1.13 raw (2 orders avg) | 0.913 | 159/198 | 80.3% | 0 | 0.0% [0.0-2.4] | 39 | 3/3 |
+| Jev 1.13 raw (2 orders avg) | 0.744 | 187/198 | 94.4% | 0 | 0.0% [0.0-2.0] | 11 | 3/3 |
+| Jev 1.13 raw (order 1 only) | 0.913 | 154/198 | 77.8% | 0 | 0.0% [0.0-2.4] | 44 | 4/4 |
+| Jev 1.13 raw (order 1 only) | 0.744 | 186/198 | 93.9% | 0 | 0.0% [0.0-2.0] | 12 | 4/4 |
+
+## Calibration on the clean set: reliability bins of the top-option probability
+
+**basal-1.0-4.5B (local, 2 orders)** n=198: mean confidence 0.907, accuracy 0.869, ECE 0.052, Brier(top) 0.088
+  - [0.00,0.50): 0
+  - [0.50,0.60): n=8 conf=0.550 acc=0.375
+  - [0.60,0.70): n=11 conf=0.652 acc=0.545
+  - [0.70,0.80): n=11 conf=0.758 acc=0.636
+  - [0.80,0.90): n=28 conf=0.855 acc=0.679
+  - [0.90,0.95): n=43 conf=0.931 acc=0.930
+  - [0.95,0.99): n=50 conf=0.977 acc=1.000
+  - [0.99,1.00): n=47 conf=0.996 acc=1.000
+**basal-1.0-1.5B (local, 2 orders)** n=198: mean confidence 0.803, accuracy 0.793, ECE 0.088, Brier(top) 0.122
+  - [0.00,0.50): n=3 conf=0.472 acc=0.333
+  - [0.50,0.60): n=30 conf=0.558 acc=0.333
+  - [0.60,0.70): n=26 conf=0.648 acc=0.731
+  - [0.70,0.80): n=24 conf=0.747 acc=0.708
+  - [0.80,0.90): n=44 conf=0.851 acc=0.955
+  - [0.90,0.95): n=19 conf=0.929 acc=0.842
+  - [0.95,0.99): n=35 conf=0.975 acc=1.000
+  - [0.99,1.00): n=17 conf=0.994 acc=1.000
+**Jev 1.13 raw (2 orders avg)** n=198: mean confidence 0.934, accuracy 0.985, ECE 0.051, Brier(top) 0.015
+  - [0.00,0.50): 0
+  - [0.50,0.60): n=5 conf=0.551 acc=0.600
+  - [0.60,0.70): n=5 conf=0.643 acc=0.800
+  - [0.70,0.80): n=4 conf=0.759 acc=1.000
+  - [0.80,0.90): n=15 conf=0.865 acc=1.000
+  - [0.90,0.95): n=53 conf=0.926 acc=1.000
+  - [0.95,0.99): n=68 conf=0.970 acc=1.000
+  - [0.99,1.00): n=48 conf=1.000 acc=1.000
+**Jev 1.13 raw (order 1 only)** n=198: mean confidence 0.932, accuracy 0.980, ECE 0.055, Brier(top) 0.016
+  - [0.00,0.50): 0
+  - [0.50,0.60): n=5 conf=0.540 acc=0.400
+  - [0.60,0.70): n=5 conf=0.642 acc=0.800
+  - [0.70,0.80): n=4 conf=0.742 acc=1.000
+  - [0.80,0.90): n=16 conf=0.861 acc=1.000
+  - [0.90,0.95): n=52 conf=0.924 acc=1.000
+  - [0.95,0.99): n=69 conf=0.970 acc=1.000
+  - [0.99,1.00): n=47 conf=0.999 acc=1.000
+
+## Order sensitivity (all 200)
+
+- basal-1.0-4.5B (local, 2 orders): orders disagree on 6 items ['D07', 'D22', 'K23', 'K35', 'S05', 'S07']; order-1-only accuracy on clean 172/198
+- basal-1.0-1.5B (local, 2 orders): orders disagree on 19 items ['R03', 'R17', 'R27', 'R35', 'D14', 'D22', 'D39', 'E14', 'K26', 'K36', 'K37', 'S02', 'S05', 'S07', 'S11', 'S12', 'P02', 'P15', 'P18']; order-1-only accuracy on clean 156/198
+- Jev 1.13 raw (2 orders avg): orders disagree on 2 items ['D22', 'P18']; order-1-only accuracy on clean 194/198
+
+## Errors on the clean set
+
+- **basal-1.0-4.5B (local, 2 orders)** (26): R31(gold A, pred B, p=0.58), D07(gold E, pred D, p=0.55), D14(gold A, pred D, p=0.87), D22(gold B, pred D, p=0.58), D39(gold E, pred B, p=0.82), E20(gold A, pred B, p=0.88), E22(gold A, pred B, p=0.89), E34(gold B, pred A, p=0.87), K02(gold B, pred A, p=0.84), K03(gold B, pred A, p=0.76), K07(gold B, pred A, p=0.63), K18(gold B, pred A, p=0.57), K22(gold A, pred B, p=0.64), K37(gold A, pred B, p=0.75), S05(gold A, pred B, p=0.64), S08(gold B, pred C, p=0.83), S09(gold B, pred C, p=0.87), S11(gold B, pred C, p=0.75), S12(gold B, pred C, p=0.91), S13(gold B, pred C, p=0.93), P09(gold A, pred B, p=0.64), P11(gold B, pred A, p=0.77), P12(gold B, pred A, p=0.53), P15(gold B, pred A, p=0.81), P18(gold B, pred A, p=0.94), P20(gold B, pred A, p=0.67)
+- **basal-1.0-1.5B (local, 2 orders)** (41): R03(gold A, pred B, p=0.54), R13(gold A, pred B, p=0.61), R17(gold A, pred B, p=0.52), R19(gold A, pred B, p=0.74), R27(gold A, pred B, p=0.52), R31(gold A, pred B, p=0.93), R33(gold A, pred B, p=0.56), R35(gold A, pred B, p=0.52), D14(gold A, pred D, p=0.45), D22(gold B, pred D, p=0.58), E10(gold A, pred B, p=0.63), E26(gold B, pred A, p=0.65), K02(gold B, pred A, p=0.64), K03(gold B, pred A, p=0.59), K07(gold B, pred A, p=0.57), K09(gold B, pred A, p=0.60), K11(gold B, pred A, p=0.55), K13(gold B, pred A, p=0.56), K14(gold B, pred A, p=0.64), K16(gold B, pred A, p=0.81), K18(gold B, pred A, p=0.78), K19(gold B, pred A, p=0.79), K23(gold B, pred A, p=0.73), K24(gold B, pred A, p=0.60), K28(gold B, pred A, p=0.59), K30(gold B, pred A, p=0.62), K31(gold B, pred A, p=0.55), K38(gold B, pred A, p=0.72), S05(gold A, pred B, p=0.47), S07(gold A, pred B, p=0.51), S08(gold B, pred C, p=0.76), S09(gold B, pred C, p=0.73), S11(gold B, pred C, p=0.52), S12(gold B, pred C, p=0.59), S13(gold B, pred C, p=0.66), P01(gold A, pred B, p=0.90), P02(gold A, pred B, p=0.57), P04(gold A, pred B, p=0.93), P09(gold A, pred B, p=0.82), P15(gold B, pred A, p=0.59), P18(gold B, pred A, p=0.59)
+- **Jev 1.13 raw (2 orders avg)** (3): D22(gold B, pred D, p=0.54), K22(gold A, pred B, p=0.62), P13(gold B, pred A, p=0.57)
+- **Jev 1.13 raw (order 1 only)** (4): D22(gold B, pred D, p=0.50), K22(gold A, pred B, p=0.63), P13(gold B, pred A, p=0.58), P18(gold B, pred A, p=0.50)
+- **Gemini 3.8 Flash (thinking medium)** (0): 
+- **Mistral Medium 3.1 (no reasoning)** (8): E28(gold B, pred A), E34(gold B, pred A), E36(gold B, pred A), K01(gold A, pred B), K06(gold A, pred B), K22(gold A, pred B), K37(gold A, pred B), P18(gold B, pred A)
+- **Qwen3-14B thinking (local MLX 4-bit)** (11): D07(gold E, pred D), D22(gold B, pred D), E36(gold B, pred A), S05(gold A, pred B), S09(gold B, pred C), S16(gold C, pred B), P13(gold B, pred A), P15(gold B, pred A), P17(gold B, pred A), P18(gold B, pred A), P19(gold B, pred A)
+
+clean items missed by most systems: [('D22', 4), ('P18', 4), ('K22', 3), ('S05', 3), ('S09', 3), ('P15', 3), ('R31', 2), ('D07', 2), ('D14', 2), ('E34', 2), ('K02', 2), ('K03', 2), ('K07', 2), ('K18', 2), ('K37', 2)]
+
+## Spend (usage.cost, all calls incl. smoke tests)
+
+- ann_opus-5.5: $0.8242
+- ann_gpt-6.1-sol: $0.2406
+- Gemini 3.8 Flash, thinking effort medium: $0.1819
+- smoke_reasoning: $0.0242
+- Mistral Medium 3.1 (no reasoning): $0.0197
+- jev-1.13: $0.0076
+- smoke_ann_sonnet: $0.0059
+- smoke_ann_sol: $0.0032
+- smoke: $0.0012
+- smoke_jev: $0.0000
+- **total: $1.3084**
