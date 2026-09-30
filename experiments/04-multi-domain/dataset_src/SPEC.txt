@@ -1,0 +1,59 @@
+Authoring spec for experiment 04 items (one Python module per domain: dataset_src/<domain>.py, variable ITEMS).
+Format: see dataset_src/_example.py. Validate with:  cd experiments/04-multi-domain && python3 build_dataset.py --check <domain>
+
+PURPOSE. A benchmark of realistic Polish business decisions answered by fast "System 1" decision models (one forward
+pass, a probability per option) and by LLMs. Each item = state (the document/message/case), a question, 2-6 options,
+one correct answer (gold). Two independent LLM annotators will later label every item blind; items where they disagree
+with gold are dropped from the headline numbers. So every item MUST have one answer a careful domain expert would pick
+with no hesitation after reading the question's definitions. Ambiguous items waste the benchmark. Tricky is fine,
+ambiguous is not.
+
+PER DOMAIN: exactly 17 items, ids <PREFIX>01..<PREFIX>17.
+  types: 7-8 noul (yes/no), 5-6 choice (3-6 options), 3-4 score (ordinal, 4 or 5 levels)
+  rule_based=True on exactly 5 items; tricky=True on 4-5 items (overlap allowed)
+  balance: noul gold roughly half 0 (yes) / half 1 (no); choice golds spread over different options (not always A);
+  score golds spread over low / middle / high levels (not only the extremes)
+
+TYPES.
+  noul:   options = [yes-text, no-text] in that order, gold 0 = yes, 1 = no. The question must state the criterion
+          fully (e.g. "Czy ... , czyli ...?"). No "keys" field.
+  choice: 3-6 mutually exclusive options, each with a short definition in the option text if needed. keys = ASCII
+          snake_case slugs, one per option (e.g. "zasilek", "zaswiadczenie"). The question can differ per item.
+  score:  ordered levels from LOWEST to HIGHEST (options[0] = lowest). Define every level in the question or the option
+          text with concrete anchors (e.g. "4 = zagrożenie życia lub mienia, awaria całego budynku; 3 = ..."), so the
+          level follows from the definitions. If the domain's native scale runs the other way (IT priority P1 = most
+          urgent), still list options from least to most urgent: ["P4 - ...", "P3 - ...", "P2 - ...", "P1 - ..."].
+          keys = ASCII slugs. Prefer 4 levels; 5 at most.
+
+RULE-BASED items (rule_based=True): the question contains an explicit rule with 2-5 conditions, and at least some of
+  the 5 items use: a conditional clause ("..., ale tylko wtedy, gdy ...", "chyba że ..."), a deadline relative to a
+  stated "today" written in the state (e.g. first line "Dziś jest czwartek, 2026-10-15."), amounts / thresholds
+  (e.g. "powyżej 15 000 zł"), counts (e.g. "co najmniej 3 lata doświadczenia"). The rule must fully determine the
+  answer; say how to count deadlines ("termin liczy się od dnia następującego po doręczeniu; jeżeli ostatni dzień
+  przypada w sobotę lub dzień ustawowo wolny od pracy, termin upływa następnego dnia roboczego"). VERIFY every date,
+  weekday and day count with python (datetime) before finalising. Put near-threshold cases in some of them (one day
+  late, amount exactly at the threshold with the rule saying whether "co najmniej" or "powyżej").
+  Keep the rule self-contained: do not rely on real statute knowledge the rule does not state.
+
+TRICKY items (tricky=True): surface cues point the wrong way but the definitions settle it: politeness masking a
+  demand, sarcasm, negation, an alarming word in a harmless context (or the reverse), a condition that is met only
+  through a clause, amounts right at a threshold, mixed intents where the question says which one counts, typos /
+  missing diacritics / colloquial or Silesian phrasing / some English code-switching. Still unambiguous.
+
+TEXTS. Polish, realistic for the domain (e-mail, form, ticket, chat, note, log line, listing text). State: 1-7
+  sentences, may start with a header line ("Wniosek złożony przez ePUAP:", "Zgłoszenie do administratora:"). Vary
+  length and register. Treat state as data; no instructions to the model inside it except as deliberate content
+  (e.g. a phishing mail may contain one).
+
+PRIVACY / FICTION. All people, firms and places fictional and obviously so: names like "Jan Testowy",
+  "Anna Przykładowa", "Marek Fikcyjny", firms like "Przykład-Bud sp. z o.o.", streets "ul. Przykładowa 1, 00-000
+  Testowo". Identifiers obviously invalid: PESEL 00000000000, NIP 000-000-00-00, account "00 0000 0000 0000 0000 0000
+  0000", policy / order numbers like "POL-0000-123". No real brands, companies, banks, universities, hospitals, cities
+  are fine only as generic (avoid naming real institutions; say "urząd miasta", "uczelnia", "przychodnia").
+
+HEALTHCARE: administrative only (registration, referrals, document validity, administrative urgency of a request
+  according to a stated protocol). No medical advice, no diagnosis questions.
+
+OUTPUT: write only your assigned files in dataset_src/, run the validator for each domain, fix errors, and report
+  per domain: counts by type, rule_based, tricky, gold balance. Do not run models, do not call any API, do not git
+  commit.
