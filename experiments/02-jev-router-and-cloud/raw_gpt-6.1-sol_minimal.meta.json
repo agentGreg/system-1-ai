@@ -1,0 +1,15 @@
+{
+ "system": "GPT-6.1 Sol, reasoning effort minimal",
+ "model_requested": "openai/gpt-6.1-sol",
+ "reasoning": {
+  "effort": "minimal"
+ },
+ "max_tokens": 8192,
+ "temperature": "provider default (not sent)",
+ "date_utc": "2026-09-30T19:38:11.552677+00:00",
+ "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+ "client_location": "Poland, residential connection",
+ "n": 30,
+ "calls_sequential": true,
+ "streaming": false
+}

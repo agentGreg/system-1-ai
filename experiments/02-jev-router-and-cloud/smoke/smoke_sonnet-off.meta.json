@@ -1,0 +1,15 @@
+{
+ "system": "smoke",
+ "model_requested": "anthropic/claude-sonnet-5.5",
+ "reasoning": {
+  "enabled": false
+ },
+ "max_tokens": 8192,
+ "temperature": "provider default (not sent)",
+ "date_utc": "2026-09-30T19:31:06.991991+00:00",
+ "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+ "client_location": "Poland, residential connection",
+ "n": 2,
+ "calls_sequential": true,
+ "streaming": false
+}

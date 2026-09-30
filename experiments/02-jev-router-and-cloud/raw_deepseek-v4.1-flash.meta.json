@@ -1,0 +1,13 @@
+{
+ "system": "DeepSeek V4.1 Flash (direct, default reasoning)",
+ "model_requested": "deepseek/deepseek-v4.1-flash",
+ "reasoning": null,
+ "max_tokens": 8192,
+ "temperature": "provider default (not sent)",
+ "date_utc": "2026-09-30T19:34:14.991437+00:00",
+ "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+ "client_location": "Poland, residential connection",
+ "n": 30,
+ "calls_sequential": true,
+ "streaming": false
+}

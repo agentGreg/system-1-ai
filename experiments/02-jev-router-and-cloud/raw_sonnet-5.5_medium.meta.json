@@ -1,0 +1,15 @@
+{
+ "system": "Claude Sonnet 5.5, reasoning effort medium",
+ "model_requested": "anthropic/claude-sonnet-5.5",
+ "reasoning": {
+  "effort": "medium"
+ },
+ "max_tokens": 8192,
+ "temperature": "provider default (not sent)",
+ "date_utc": "2026-09-30T19:35:03.923393+00:00",
+ "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+ "client_location": "Poland, residential connection",
+ "n": 30,
+ "calls_sequential": true,
+ "streaming": false
+}

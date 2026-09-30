@@ -9,6 +9,10 @@ typed options, no text generation) with generative "thinking" LLMs on everyday b
   department, escalate to a human, is the form complete). basal-1.0 (4.5B and 1.5B, letter readout, both option orders
   averaged, calibrated) vs Qwen3-14B with thinking on and off, all run locally on an Apple Silicon Mac.
   See `results.md` there.
+- `experiments/02-jev-router-and-cloud/`: the same 30 decisions and the same prompt sent through OpenRouter to
+  TypeSafe's Jev Router (`typesafe/jev-router`, which picks another model and effort per request), the two models it
+  picked called directly (GPT-6 Luna, DeepSeek V4.1 Flash), and cloud reasoning models (Claude Sonnet 5.5, GPT-6.1 Sol,
+  Gemini 3.8 Flash). Accuracy, end-to-end latency from Poland, tokens and exact cost per call. See `results.md` there.
 
 ## Running
 
@@ -21,6 +25,9 @@ cd experiments/01-basal-vs-thinking
 ../../.venv/bin/python run_llm.py --model <dir> --label "Qwen3-14B thinking" --thinking --out raw_qwen3-14b_think.jsonl
 ../../.venv/bin/python analyze.py
 ```
+
+Experiment 02 needs only Python 3 (standard library) and an OpenRouter key in the macOS keychain
+(`security add-generic-password -s openrouter-api-key -w`); see `run_all_chat.sh` there.
 
 `basal_prompt.py` is a verbatim copy of `basal/prompt.py` from https://github.com/rkinas/basal (Apache-2.0).
 

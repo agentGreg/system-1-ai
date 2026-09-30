@@ -1,0 +1,13 @@
+{
+ "system": "GPT-6 Luna (direct, default reasoning)",
+ "model_requested": "openai/gpt-6-luna",
+ "reasoning": null,
+ "max_tokens": 8192,
+ "temperature": "provider default (not sent)",
+ "date_utc": "2026-09-30T19:33:40.470464+00:00",
+ "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+ "client_location": "Poland, residential connection",
+ "n": 30,
+ "calls_sequential": true,
+ "streaming": false
+}
