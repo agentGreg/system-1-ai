@@ -23,6 +23,11 @@ typed options, no text generation) with generative "thinking" LLMs on everyday b
   university, housing community, marketplace moderation), yes/no, choice and ordinal score questions, 60 with
   explicit rules (deadlines, thresholds, exceptions). Same annotators, systems and protocol as experiment 03, plus
   per-domain, per-type and rule-based vs not breakdowns. See `results.md` there.
+- `experiments/05-rule-decomposition/`: the 99 rule items of experiments 03/04 (60 rule-based, 39 completeness)
+  with each compound rule split into atomic yes/no sub-questions and a fixed combiner in code (decompositions
+  committed before any run, checked blind against true sub-answers). Variant A asks every sub-question to the model;
+  variant B computes dates, deadlines and thresholds in Python and asks only the reading questions. basal-1.0 (4.5B,
+  1.5B) and raw Jev 1.13 vs their compound-question baselines, with coverage at 0.913. See `results.md` there.
 
 ## Running
 
@@ -49,7 +54,7 @@ Experiment 04 works the same way (`build_dataset.py` reads `dataset_src/`; see t
 
 Raw model outputs in this repo are published for evaluation only. Do not use them to train, fine-tune or distill
 models. Jev results come from the alpha endpoint https://openrouter.ai/api/alpha/decisions (typesafe/jev-1.13) and are
-a snapshot as of 2026-09-30; this repo is independent and not affiliated with or endorsed by TypeSafe AI, OpenRouter
+a snapshot as of 2026-09-30 (experiment 05: 2026-10-01); this repo is independent and not affiliated with or endorsed by TypeSafe AI, OpenRouter
 or any other model provider.
 
 ## License

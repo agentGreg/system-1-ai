@@ -1,0 +1,70 @@
+## Decomposition stats
+
+| block | items | sub-questions per item (min / mean / max) | total sub-questions | read | arith | items with >= 1 arith |
+|---|---|---|---|---|---|---|
+| exp 04 rules (60) | 60 | 1 / 3.65 / 7 | 219 | 112 | 107 | 53 |
+| exp 03 completeness (39) | 39 | 2 / 4.49 / 6 | 175 | 175 | 0 | 0 |
+| both blocks (99) | 99 | 1 / 3.98 / 7 | 394 | 287 | 107 | 53 |
+
+## Accuracy (95% Wilson intervals)
+
+| system | condition | exp 04 rules (60) | exp 03 completeness (39) | both blocks (99) |
+|---|---|---|---|---|
+| basal-4.5B | compound question (baseline, exp 03/04 run) | 38/60 = 63.3% [51-74] | 33/39 = 84.6% [70-93] | 71/99 = 71.7% [62-80] |
+| basal-4.5B | A: pure decomposition | 40/60 = 66.7% [54-77] | 36/39 = 92.3% [80-97] | 76/99 = 76.8% [68-84] |
+| basal-4.5B | B: decomposition + Python arithmetic | 59/60 = 98.3% [91-100] | 36/39 = 92.3% [80-97] | 95/99 = 96.0% [90-98] |
+| basal-1.5B | compound question (baseline, exp 03/04 run) | 38/60 = 63.3% [51-74] | 23/39 = 59.0% [43-73] | 61/99 = 61.6% [52-71] |
+| basal-1.5B | A: pure decomposition | 34/60 = 56.7% [44-68] | 30/39 = 76.9% [62-87] | 64/99 = 64.6% [55-73] |
+| basal-1.5B | B: decomposition + Python arithmetic | 54/60 = 90.0% [80-95] | 30/39 = 76.9% [62-87] | 84/99 = 84.8% [76-91] |
+| Jev 1.13 | compound question (baseline, exp 03/04 run) | 49/60 = 81.7% [70-89] | 38/39 = 97.4% [87-100] | 87/99 = 87.9% [80-93] |
+| Jev 1.13 | A: pure decomposition | 51/60 = 85.0% [74-92] | 39/39 = 100.0% [91-100] | 90/99 = 90.9% [84-95] |
+| Jev 1.13 | B: decomposition + Python arithmetic | 60/60 = 100.0% [94-100] | 39/39 = 100.0% [91-100] | 99/99 = 100.0% [96-100] |
+| Gemini 3.8 Flash (medium) | compound question (baseline, exp 03/04 run) | 60/60 = 100.0% [94-100] | 39/39 = 100.0% [91-100] | 99/99 = 100.0% [96-100] |
+
+## Latency per item, median ms (basal: sum of sequential forwards on the Mac; Jev: wall clock of the order-1 call from Poland, all sub-questions in one call)
+
+| system | condition | exp 04 rules (60) | exp 03 completeness (39) | both blocks (99) |
+|---|---|---|---|---|
+| basal-4.5B | compound | 143 | 127 | 136 |
+| basal-4.5B | A | 425 | 493 | 470 |
+| basal-4.5B | B | 179 | 493 | 350 |
+| basal-1.5B | compound | 58 | 51 | 55 |
+| basal-1.5B | A | 171 | 192 | 185 |
+| basal-1.5B | B | 71 | 192 | 135 |
+| Jev 1.13 | compound | 298 | 283 | 288 |
+| Jev 1.13 | A | 300 | 287 | 294 |
+| Jev 1.13 | B | 283 | 287 | 285 |
+| Gemini 3.8 Flash (medium) | compound | 3435 | 3529 | 3496 |
+
+## Coverage at confidence >= 0.913 (both blocks, 99 items)
+
+Baseline confidence = top-option probability of the compound decision; decomposed confidence = probability of the predicted outcome under independent sub-answers (exact enumeration; for a pure AND rule with a 'yes' outcome this is the product of the sub-answer probabilities).
+
+| system | condition | accepted | errors among accepted | wrong items accepted |
+|---|---|---|---|---|
+| basal-4.5B | compound | 19/99 | 1 | HR04 |
+| basal-4.5B | A | 36/99 | 0 | - |
+| basal-4.5B | B | 74/99 | 0 | - |
+| basal-1.5B | compound | 4/99 | 2 | HR04, MFG05 |
+| basal-1.5B | A | 22/99 | 4 | HR03, ECM01, K29, K37 |
+| basal-1.5B | B | 54/99 | 2 | K29, K37 |
+| Jev 1.13 | compound | 55/99 | 0 | - |
+| Jev 1.13 | A | 39/99 | 0 | - |
+| Jev 1.13 | B | 71/99 | 0 | - |
+
+## Sub-question accuracy against the checker's true answers (all sub-questions, as in variant A)
+
+| system | read | arith |
+|---|---|---|
+| basal-4.5B | 279/287 = 97.2% [95-99] | 75/107 = 70.1% [61-78] |
+| basal-1.5B | 248/287 = 86.4% [82-90] | 70/107 = 65.4% [56-74] |
+| Jev 1.13 | 284/287 = 99.0% [97-100] | 88/107 = 82.2% [74-88] |
+
+## Items still wrong after decomposition
+
+- **basal-4.5B A**: 23 wrong; fixed vs baseline 16, newly wrong 11. ADM03 (baseline wrong; wrong sub-answers: q1/arith); ADM04 (baseline ok; wrong sub-answers: q2/arith); HR01 (baseline ok; wrong sub-answers: q4/arith); HR03 (baseline ok; wrong sub-answers: q2/arith, q3/arith); HR14 (baseline wrong; wrong sub-answers: q3/arith); MED02 (baseline ok; wrong sub-answers: q6/arith); MED03 (baseline ok; wrong sub-answers: q4/arith); INS01 (baseline ok; wrong sub-answers: q1/arith); BNK03 (baseline ok; wrong sub-answers: q1/arith); BNK04 (baseline wrong; wrong sub-answers: q3/arith, q4/arith); BNK05 (baseline wrong; wrong sub-answers: q3/arith); LOG05 (baseline wrong; wrong sub-answers: q2/arith); ITS02 (baseline wrong; wrong sub-answers: q3/arith); ITS03 (baseline wrong; wrong sub-answers: q2/arith); MFG02 (baseline ok; wrong sub-answers: q3/arith); MFG05 (baseline wrong; wrong sub-answers: q1/arith); EDU01 (baseline wrong; wrong sub-answers: q1/arith); EDU03 (baseline wrong; wrong sub-answers: q1/arith); RE03 (baseline ok; wrong sub-answers: q1/read); ECM04 (baseline wrong; wrong sub-answers: q6/arith); K18 (baseline wrong; wrong sub-answers: q2/read); K21 (baseline ok; wrong sub-answers: q4/read); K38 (baseline ok; wrong sub-answers: q4/read)
+- **basal-4.5B B**: 4 wrong; fixed vs baseline 27, newly wrong 3. RE03 (baseline ok; wrong sub-answers: q1/read); K18 (baseline wrong; wrong sub-answers: q2/read); K21 (baseline ok; wrong sub-answers: q4/read); K38 (baseline ok; wrong sub-answers: q4/read)
+- **basal-1.5B A**: 35 wrong; fixed vs baseline 25, newly wrong 22. ADM03 (baseline wrong; wrong sub-answers: q1/arith, q2/arith); ADM04 (baseline ok; wrong sub-answers: q1/arith, q2/arith, q3/arith); LAW01 (baseline ok; wrong sub-answers: q3/arith); LAW02 (baseline ok; wrong sub-answers: q1/arith); LAW04 (baseline ok; wrong sub-answers: q1/arith); LAW14 (baseline ok; wrong sub-answers: q2/read, q3/arith, q4/arith); HR03 (baseline ok; wrong sub-answers: q2/arith, q3/arith); HR04 (baseline wrong; wrong sub-answers: q2/read); MED02 (baseline wrong; wrong sub-answers: q6/arith); MED04 (baseline ok; wrong sub-answers: q1/arith, q4/read); INS01 (baseline ok; wrong sub-answers: q1/arith); BNK02 (baseline wrong; wrong sub-answers: q5/arith); LOG02 (baseline ok; wrong sub-answers: q4/arith); LOG04 (baseline ok; wrong sub-answers: q2/read); LOG05 (baseline wrong; wrong sub-answers: q2/arith); ITS02 (baseline wrong; wrong sub-answers: q3/arith); ITS03 (baseline wrong; wrong sub-answers: q2/arith); ITS04 (baseline wrong; wrong sub-answers: q1/arith); MFG02 (baseline ok; wrong sub-answers: q3/arith); EDU01 (baseline wrong; wrong sub-answers: q1/arith, q2/arith); EDU04 (baseline ok; wrong sub-answers: q2/read); RE01 (baseline wrong; wrong sub-answers: q1/arith); RE03 (baseline ok; wrong sub-answers: q1/read); RE05 (baseline ok; wrong sub-answers: q3/arith); ECM01 (baseline wrong; wrong sub-answers: q2/arith, q5/arith); ECM04 (baseline ok; wrong sub-answers: q6/arith); K08 (baseline ok; wrong sub-answers: q2/read); K15 (baseline ok; wrong sub-answers: q3/read); K18 (baseline wrong; wrong sub-answers: q2/read); K21 (baseline ok; wrong sub-answers: q4/read); K24 (baseline wrong; wrong sub-answers: q3/read); K29 (baseline ok; wrong sub-answers: q2/read, q3/read); K32 (baseline ok; wrong sub-answers: q3/read); K33 (baseline ok; wrong sub-answers: q2/read); K37 (baseline ok; wrong sub-answers: q2/read, q3/read)
+- **basal-1.5B B**: 15 wrong; fixed vs baseline 35, newly wrong 12. LAW14 (baseline ok; wrong sub-answers: q2/read); HR04 (baseline wrong; wrong sub-answers: q2/read); MED04 (baseline ok; wrong sub-answers: q4/read); LOG04 (baseline ok; wrong sub-answers: q2/read); EDU04 (baseline ok; wrong sub-answers: q2/read); RE03 (baseline ok; wrong sub-answers: q1/read); K08 (baseline ok; wrong sub-answers: q2/read); K15 (baseline ok; wrong sub-answers: q3/read); K18 (baseline wrong; wrong sub-answers: q2/read); K21 (baseline ok; wrong sub-answers: q4/read); K24 (baseline wrong; wrong sub-answers: q3/read); K29 (baseline ok; wrong sub-answers: q2/read, q3/read); K32 (baseline ok; wrong sub-answers: q3/read); K33 (baseline ok; wrong sub-answers: q2/read); K37 (baseline ok; wrong sub-answers: q2/read, q3/read)
+- **Jev 1.13 A**: 9 wrong; fixed vs baseline 6, newly wrong 3. ADM01 (baseline ok; wrong sub-answers: q3/arith); ADM03 (baseline wrong; wrong sub-answers: q1/arith, q2/arith, q3/arith); LAW02 (baseline wrong; wrong sub-answers: q1/arith); MED03 (baseline wrong; wrong sub-answers: q4/arith); INS01 (baseline ok; wrong sub-answers: q1/arith); LOG01 (baseline wrong; wrong sub-answers: q1/arith); EDU01 (baseline wrong; wrong sub-answers: q1/arith, q2/arith); EDU03 (baseline wrong; wrong sub-answers: q1/arith); RE02 (baseline ok; wrong sub-answers: q1/arith)
+- **Jev 1.13 B**: 0 wrong; fixed vs baseline 12, newly wrong 0. 

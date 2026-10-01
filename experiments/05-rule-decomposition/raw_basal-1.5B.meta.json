@@ -1,0 +1,28 @@
+{
+ "system": "Remek/basal-1.0-1.5B",
+ "hf_revision": "81a74acc6e7f7604008697b2daa83b3652d85b68",
+ "dtype": "bfloat16",
+ "device": "mps",
+ "orders": 2,
+ "options": [
+  "Tak",
+  "Nie"
+ ],
+ "temperature_noul": 1.3348398541700341,
+ "calibration_keys": [
+  "version",
+  "method",
+  "temperature_per_prim",
+  "thresholds"
+ ],
+ "load_s": 1.2267735418863595,
+ "torch": "2.14.0",
+ "hardware": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.8"
+ },
+ "n_items": 99,
+ "n_subquestions": 394
+}

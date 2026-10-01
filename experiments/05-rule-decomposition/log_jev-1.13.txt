@@ -1,0 +1,100 @@
+ADM01 q1=0.32 q2=0.57 q3=0.30 A 320ms B 0ms served=typesafe/jev-1.13-20260917
+ADM02 q1=0.97 q2=0.08 q3=0.93 q4=0.06 q5=0.07 A 276ms B 276ms served=typesafe/jev-1.13-20260917
+ADM03 q1=0.75 q2=0.51 q3=0.46 A 338ms B 0ms served=typesafe/jev-1.13-20260917
+ADM04 q1=0.96 q2=0.99 q3=0.92 q4=0.96 A 284ms B 425ms served=typesafe/jev-1.13-20260917
+ADM12 q1=0.05 q2=0.96 q3=0.97 A 270ms B 416ms served=typesafe/jev-1.13-20260917
+LAW01 q1=0.84 q2=0.61 q3=0.64 A 316ms B 0ms served=typesafe/jev-1.13-20260917
+LAW02 q1=0.89 q2=0.04 A 331ms B 315ms served=typesafe/jev-1.13-20260917
+LAW03 q1=0.53 q2=0.94 q3=0.09 q4=0.06 A 278ms B 302ms served=typesafe/jev-1.13-20260917
+LAW04 q1=0.05 q2=0.98 q3=0.98 A 353ms B 288ms served=typesafe/jev-1.13-20260917
+LAW14 q1=0.98 q2=0.29 q3=0.91 q4=0.96 A 279ms B 267ms served=typesafe/jev-1.13-20260917
+HR01 q1=0.94 q2=0.97 q3=0.06 q4=0.90 A 286ms B 305ms served=typesafe/jev-1.13-20260917
+HR02 q1=0.97 q2=0.23 A 316ms B 294ms served=typesafe/jev-1.13-20260917
+HR03 q1=0.72 q2=0.92 q3=0.95 A 311ms B 0ms served=typesafe/jev-1.13-20260917
+HR04 q1=0.02 q2=0.98 q3=0.03 q4=0.09 A 289ms B 289ms served=typesafe/jev-1.13-20260917
+HR14 q1=0.98 q2=0.97 q3=0.87 q4=0.97 A 349ms B 333ms served=typesafe/jev-1.13-20260917
+MED01 q1=0.97 q2=0.97 q3=0.96 q4=0.95 q5=0.95 q6=0.56 q7=0.96 A 297ms B 329ms served=typesafe/jev-1.13-20260917
+MED02 q1=0.98 q2=0.97 q3=0.96 q4=0.94 q5=0.91 q6=0.30 A 344ms B 295ms served=typesafe/jev-1.13-20260917
+MED03 q1=0.06 q2=0.04 q3=0.95 q4=0.68 A 299ms B 285ms served=typesafe/jev-1.13-20260917
+MED04 q1=0.81 q2=0.05 q3=0.98 q4=0.98 A 281ms B 310ms served=typesafe/jev-1.13-20260917
+MED13 q1=0.98 q2=0.97 q3=0.93 q4=0.98 A 281ms B 281ms served=typesafe/jev-1.13-20260917
+INS01 q1=0.52 A 302ms B 0ms served=typesafe/jev-1.13-20260917
+INS02 q1=0.98 q2=0.97 q3=0.97 A 284ms B 301ms served=typesafe/jev-1.13-20260917
+INS03 q1=0.97 q2=0.98 q3=0.07 q4=0.98 q5=0.92 q6=0.98 A 272ms B 268ms served=typesafe/jev-1.13-20260917
+INS04 q1=0.98 q2=0.91 q3=0.06 A 307ms B 0ms served=typesafe/jev-1.13-20260917
+INS06 q1=0.81 q2=0.08 q3=0.99 q4=0.98 q5=0.06 q6=0.04 A 380ms B 270ms served=typesafe/jev-1.13-20260917
+BNK01 q1=0.04 q2=0.03 q3=0.99 q4=0.07 q5=0.09 A 287ms B 279ms served=typesafe/jev-1.13-20260917
+BNK02 q1=0.03 q2=0.04 q3=0.98 q4=0.11 q5=0.79 A 308ms B 268ms served=typesafe/jev-1.13-20260917
+BNK03 q1=0.91 q2=0.07 q3=0.96 q4=0.04 q5=0.95 A 275ms B 302ms served=typesafe/jev-1.13-20260917
+BNK04 q1=0.89 q2=0.98 q3=0.69 q4=0.40 q5=0.96 A 286ms B 273ms served=typesafe/jev-1.13-20260917
+BNK05 q1=0.97 q2=0.97 q3=0.15 q4=0.97 q5=0.98 A 317ms B 413ms served=typesafe/jev-1.13-20260917
+LOG01 q1=0.64 q2=0.96 A 316ms B 0ms served=typesafe/jev-1.13-20260917
+LOG02 q1=0.03 q2=0.96 q3=0.90 q4=0.98 A 314ms B 280ms served=typesafe/jev-1.13-20260917
+LOG03 q1=0.97 q2=0.86 q3=0.97 q4=0.98 q5=0.94 q6=0.42 q7=0.05 A 321ms B 310ms served=typesafe/jev-1.13-20260917
+LOG04 q1=0.90 q2=0.97 q3=0.95 q4=0.98 A 289ms B 304ms served=typesafe/jev-1.13-20260917
+LOG05 q1=0.04 q2=0.40 A 338ms B 270ms served=typesafe/jev-1.13-20260917
+ITS01 q1=0.98 q2=0.56 q3=0.99 A 323ms B 321ms served=typesafe/jev-1.13-20260917
+ITS02 q1=0.98 q2=0.98 q3=0.34 q4=0.05 q5=0.99 q6=0.98 A 289ms B 305ms served=typesafe/jev-1.13-20260917
+ITS03 q1=0.99 q2=0.27 q3=0.97 A 307ms B 322ms served=typesafe/jev-1.13-20260917
+ITS04 q1=0.96 q2=0.04 A 292ms B 298ms served=typesafe/jev-1.13-20260917
+ITS05 q1=0.07 q2=0.96 q3=0.04 q4=0.08 A 394ms B 394ms served=typesafe/jev-1.13-20260917
+MFG01 q1=0.97 q2=0.11 A 280ms B 0ms served=typesafe/jev-1.13-20260917
+MFG02 q1=0.94 q2=0.98 q3=0.48 A 287ms B 356ms served=typesafe/jev-1.13-20260917
+MFG03 q1=0.94 q2=0.94 q3=0.83 q4=0.05 A 388ms B 280ms served=typesafe/jev-1.13-20260917
+MFG04 q1=0.55 A 299ms B 0ms served=typesafe/jev-1.13-20260917
+MFG05 q1=0.05 A 318ms B 0ms served=typesafe/jev-1.13-20260917
+EDU01 q1=0.75 q2=0.56 q3=0.70 A 280ms B 0ms served=typesafe/jev-1.13-20260917
+EDU02 q1=0.97 q2=0.98 q3=0.07 A 302ms B 302ms served=typesafe/jev-1.13-20260917
+EDU03 q1=0.54 A 322ms B 0ms served=typesafe/jev-1.13-20260917
+EDU04 q1=0.97 q2=0.97 q3=0.96 q4=0.05 q5=0.06 A 304ms B 304ms served=typesafe/jev-1.13-20260917
+EDU05 q1=0.91 q2=0.06 A 289ms B 279ms served=typesafe/jev-1.13-20260917
+RE01 q1=0.08 A 257ms B 0ms served=typesafe/jev-1.13-20260917
+RE02 q1=0.40 A 273ms B 0ms served=typesafe/jev-1.13-20260917
+RE03 q1=0.12 A 301ms B 301ms served=typesafe/jev-1.13-20260917
+RE04 q1=0.95 A 264ms B 264ms served=typesafe/jev-1.13-20260917
+RE05 q1=0.62 q2=0.56 q3=0.55 A 298ms B 0ms served=typesafe/jev-1.13-20260917
+ECM01 q1=0.97 q2=0.97 q3=0.04 q4=0.94 q5=0.83 q6=0.74 A 343ms B 271ms served=typesafe/jev-1.13-20260917
+ECM02 q1=0.98 q2=0.99 q3=0.03 q4=0.04 q5=0.97 q6=0.89 A 276ms B 342ms served=typesafe/jev-1.13-20260917
+ECM03 q1=0.06 q2=0.98 q3=0.97 q4=0.20 q5=0.17 q6=0.97 A 347ms B 309ms served=typesafe/jev-1.13-20260917
+ECM04 q1=0.97 q2=0.98 q3=0.98 q4=0.15 q5=0.18 q6=0.43 A 295ms B 297ms served=typesafe/jev-1.13-20260917
+ECM05 q1=0.97 q2=0.98 q3=0.04 q4=0.89 q5=0.96 q6=0.87 A 304ms B 276ms served=typesafe/jev-1.13-20260917
+K01 q1=0.99 q2=0.98 q3=0.98 q4=0.05 q5=0.04 A 402ms B 402ms served=typesafe/jev-1.13-20260917
+K02 q1=0.08 q2=0.98 q3=0.99 q4=0.99 q5=0.99 A 280ms B 280ms served=typesafe/jev-1.13-20260917
+K03 q1=0.99 q2=0.98 q3=0.99 q4=0.98 q5=0.04 A 260ms B 260ms served=typesafe/jev-1.13-20260917
+K04 q1=0.99 q2=0.98 q3=0.99 q4=0.99 q5=0.99 A 271ms B 271ms served=typesafe/jev-1.13-20260917
+K05 q1=0.99 q2=0.98 q3=0.11 q4=0.10 q5=0.04 A 298ms B 298ms served=typesafe/jev-1.13-20260917
+K06 q1=0.99 q2=0.98 q3=0.98 q4=0.05 q5=0.04 A 292ms B 292ms served=typesafe/jev-1.13-20260917
+K07 q1=0.99 q2=0.97 q3=0.99 q4=0.98 q5=0.05 A 330ms B 330ms served=typesafe/jev-1.13-20260917
+K08 q1=0.99 q2=0.97 q3=0.98 q4=0.05 q5=0.05 A 380ms B 380ms served=typesafe/jev-1.13-20260917
+K09 q1=0.98 q2=0.07 q3=0.98 q4=0.05 q5=0.04 A 291ms B 291ms served=typesafe/jev-1.13-20260917
+K10 q1=0.99 q2=0.98 q3=0.99 q4=0.99 q5=0.99 A 268ms B 268ms served=typesafe/jev-1.13-20260917
+K11 q1=0.08 q2=0.98 q3=0.98 q4=0.05 q5=0.04 A 294ms B 294ms served=typesafe/jev-1.13-20260917
+K12 q1=0.99 q2=0.99 q3=0.98 A 262ms B 262ms served=typesafe/jev-1.13-20260917
+K13 q1=0.08 q2=0.98 q3=0.97 A 260ms B 260ms served=typesafe/jev-1.13-20260917
+K14 q1=0.98 q2=0.08 q3=0.97 A 304ms B 304ms served=typesafe/jev-1.13-20260917
+K15 q1=0.99 q2=0.99 q3=0.98 A 277ms B 277ms served=typesafe/jev-1.13-20260917
+K16 q1=0.98 q2=0.98 q3=0.13 A 271ms B 271ms served=typesafe/jev-1.13-20260917
+K17 q1=0.98 q2=0.97 A 264ms B 264ms served=typesafe/jev-1.13-20260917
+K18 q1=0.98 q2=0.08 A 326ms B 326ms served=typesafe/jev-1.13-20260917
+K19 q1=0.07 q2=0.98 A 276ms B 276ms served=typesafe/jev-1.13-20260917
+K20 q1=0.98 q2=0.98 A 284ms B 284ms served=typesafe/jev-1.13-20260917
+K21 q1=0.99 q2=0.99 q3=0.98 q4=0.87 q5=0.96 q6=0.98 A 277ms B 277ms served=typesafe/jev-1.13-20260917
+K22 q1=0.99 q2=0.98 q3=0.98 q4=0.97 q5=0.03 q6=0.08 A 321ms B 321ms served=typesafe/jev-1.13-20260917
+K23 q1=0.98 q2=0.98 q3=0.98 q4=0.96 q5=0.96 q6=0.09 A 282ms B 282ms served=typesafe/jev-1.13-20260917
+K24 q1=0.99 q2=0.98 q3=0.09 q4=0.97 q5=0.03 q6=0.08 A 306ms B 306ms served=typesafe/jev-1.13-20260917
+K25 q1=0.99 q2=0.96 q3=0.99 q4=0.98 q5=0.94 q6=0.98 A 335ms B 335ms served=typesafe/jev-1.13-20260917
+K26 q1=0.07 q2=0.99 q3=0.98 q4=0.96 q5=0.84 q6=0.08 A 291ms B 291ms served=typesafe/jev-1.13-20260917
+K27 q1=0.99 q2=0.98 q3=0.78 q4=0.03 q5=0.04 A 275ms B 275ms served=typesafe/jev-1.13-20260917
+K28 q1=0.98 q2=0.93 q3=0.70 q4=0.98 q5=0.07 A 287ms B 287ms served=typesafe/jev-1.13-20260917
+K29 q1=0.98 q2=0.94 q3=0.77 q4=0.98 q5=0.97 A 284ms B 284ms served=typesafe/jev-1.13-20260917
+K30 q1=0.09 q2=0.93 q3=0.79 q4=0.03 q5=0.04 A 334ms B 334ms served=typesafe/jev-1.13-20260917
+K31 q1=0.96 q2=0.14 q3=0.33 q4=0.07 q5=0.05 A 324ms B 324ms served=typesafe/jev-1.13-20260917
+K32 q1=0.98 q2=0.95 q3=0.80 q4=0.05 q5=0.08 A 271ms B 271ms served=typesafe/jev-1.13-20260917
+K33 q1=0.99 q2=0.97 q3=0.98 q4=0.06 A 277ms B 277ms served=typesafe/jev-1.13-20260917
+K34 q1=0.99 q2=0.60 q3=0.04 q4=0.07 A 257ms B 257ms served=typesafe/jev-1.13-20260917
+K35 q1=0.99 q2=0.98 q3=0.42 q4=0.98 A 322ms B 322ms served=typesafe/jev-1.13-20260917
+K36 q1=0.07 q2=0.07 q3=0.47 q4=0.98 A 294ms B 294ms served=typesafe/jev-1.13-20260917
+K37 q1=0.99 q2=0.98 q3=0.98 q4=0.07 q5=0.08 A 251ms B 251ms served=typesafe/jev-1.13-20260917
+K38 q1=0.97 q2=0.96 q3=0.97 q4=0.81 q5=0.07 A 305ms B 305ms served=typesafe/jev-1.13-20260917
+K40 q1=0.06 q2=0.20 q3=0.06 q4=0.15 q5=0.05 A 296ms B 296ms served=typesafe/jev-1.13-20260917
+99 items  run cost $0.00632  total spent $0.00644
