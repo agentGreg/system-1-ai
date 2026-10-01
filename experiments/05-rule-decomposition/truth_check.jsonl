@@ -1,0 +1,99 @@
+{"id": "ADM01", "answers": {"q1": false, "q2": true, "q3": true}, "notes": {"q2": "14th day = 2026-11-11 (holiday, Wed)", "q3": "first working day after = 2026-11-12, posted that day"}}
+{"id": "ADM02", "answers": {"q1": true, "q2": false, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "ADM03", "answers": {"q1": false, "q2": false, "q3": true}, "notes": {"q1": "7th day = Mon 2026-10-12; filed 10-13", "q3": "Literal reading: first working day after day 7 is 10-13, filed 10-13 -> Tak. Under the legal rule (extension only if day 7 is a non-working day) deadline was 10-12."}}
+{"id": "ADM04", "answers": {"q1": true, "q2": true, "q3": true, "q4": true}, "notes": {"q3": "March 2026 within 12 months before 2026-10-08"}}
+{"id": "ADM12", "answers": {"q1": false, "q2": true, "q3": true}, "notes": {}}
+{"id": "LAW01", "answers": {"q1": false, "q2": true, "q3": true}, "notes": {"q2": "14th day = Sat 2026-10-17", "q3": "next working day Mon 2026-10-19 = today"}}
+{"id": "LAW02", "answers": {"q1": false, "q2": false}, "notes": {"q1": "3 years -> 2026-03-15, end of year 2026-12-31; today 2026-10-14 not later"}}
+{"id": "LAW03", "answers": {"q1": false, "q2": true, "q3": false, "q4": false}, "notes": {"q2": "matter ended 2024-02-28, within 3 years of 2026-10-07"}}
+{"id": "LAW04", "answers": {"q1": false, "q2": true, "q3": true}, "notes": {}}
+{"id": "LAW14", "answers": {"q1": true, "q2": false, "q3": true, "q4": true}, "notes": {"q3": "6000/4 = 1500, not exceeding"}}
+{"id": "HR01", "answers": {"q1": true, "q2": true, "q3": false, "q4": true}, "notes": {"q1": "~7 years total (24 + 61 months)", "q4": "~7 years total"}}
+{"id": "HR02", "answers": {"q1": true, "q2": false}, "notes": {"q2": "01.2024 to 2026-10-01 = 2y9m"}}
+{"id": "HR03", "answers": {"q1": true, "q2": true, "q3": true}, "notes": {"q1": "3 used + 1 = 4"}}
+{"id": "HR04", "answers": {"q1": false, "q2": true, "q3": false, "q4": false}, "notes": {"q4": "no information about key-employee flag"}}
+{"id": "HR14", "answers": {"q1": true, "q2": true, "q3": true, "q4": true}, "notes": {"q3": "03.2020 to 2026-10 = ~6y7m"}}
+{"id": "MED01", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true, "q6": false, "q7": true}, "notes": {"q6": "97 days", "q7": "19 days"}}
+{"id": "MED02", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true, "q6": false}, "notes": {"q6": "91 days"}}
+{"id": "MED03", "answers": {"q1": false, "q2": false, "q3": true, "q4": false}, "notes": {"q4": "born 2008-03-10, 18 on 2026-03-10"}}
+{"id": "MED04", "answers": {"q1": true, "q2": false, "q3": true, "q4": true}, "notes": {"q1": "2025-11-04 is within 12 months before 2026-10-20"}}
+{"id": "MED13", "answers": {"q1": true, "q2": true, "q3": true, "q4": true}, "notes": {}}
+{"id": "INS01", "answers": {"q1": false}, "notes": {"q1": "karencja 09-15..09-28; first day after = 09-29; theft 09-28"}}
+{"id": "INS02", "answers": {"q1": true, "q2": true, "q3": true}, "notes": {}}
+{"id": "INS03", "answers": {"q1": true, "q2": true, "q3": false, "q4": true, "q5": true, "q6": true}, "notes": {"q5": "7th day = 2026-10-09; reported 10-08"}}
+{"id": "INS04", "answers": {"q1": true, "q2": true, "q3": false}, "notes": {"q2": "window 10-06..10-08; reported 10-07"}}
+{"id": "INS06", "answers": {"q1": true, "q2": false, "q3": true, "q4": true, "q5": false, "q6": false}, "notes": {"q1": "24 days", "q6": "70%"}}
+{"id": "BNK01", "answers": {"q1": false, "q2": false, "q3": true, "q4": false, "q5": false}, "notes": {"q2": "added 10-10, now 10-13 10:40 (>24h)"}}
+{"id": "BNK02", "answers": {"q1": false, "q2": false, "q3": true, "q4": false, "q5": true}, "notes": {"q5": "window 10-09..10-15: 7000+5000+8000 = 20000 (10-08 excluded)"}}
+{"id": "BNK03", "answers": {"q1": true, "q2": false, "q3": true, "q4": false, "q5": true}, "notes": {"q1": "3000/7500 = exactly 40%", "q3": "6 months reached 2026-09-16"}}
+{"id": "BNK04", "answers": {"q1": true, "q2": true, "q3": false, "q4": false, "q5": true}, "notes": {"q3": "self-employed, no employer; read as Nie", "q4": "2025-12-01 to 2026-10-20 < 12 months"}}
+{"id": "BNK05", "answers": {"q1": true, "q2": true, "q3": false, "q4": true, "q5": true}, "notes": {"q3": "28 days"}}
+{"id": "LOG01", "answers": {"q1": false, "q2": true}, "notes": {"q1": "working days after 11-10: 11-12 (1st), 11-13 (2nd); delivered on 2nd"}}
+{"id": "LOG02", "answers": {"q1": false, "q2": true, "q3": true, "q4": true}, "notes": {"q2": "window 10-20..10-24; request 10-23"}}
+{"id": "LOG03", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true, "q6": true, "q7": false}, "notes": {"q7": "valid to 10-26, transport 10-27"}}
+{"id": "LOG04", "answers": {"q1": true, "q2": true, "q3": true, "q4": true}, "notes": {"q1": "7th day = 10-09 = report date"}}
+{"id": "LOG05", "answers": {"q1": false, "q2": false}, "notes": {"q2": "4 working days (10-30, 11-02, 11-03, 11-04)"}}
+{"id": "ITS01", "answers": {"q1": true, "q2": true, "q3": true}, "notes": {"q2": "today-365 = 2025-10-15 = training date, not earlier"}}
+{"id": "ITS02", "answers": {"q1": true, "q2": true, "q3": false, "q4": false, "q5": true, "q6": true}, "notes": {"q3": "limit 2026-10-31; requested 11-05"}}
+{"id": "ITS03", "answers": {"q1": true, "q2": false, "q3": true}, "notes": {"q2": "today-90 = 2026-08-14; training 08-13 is earlier"}}
+{"id": "ITS04", "answers": {"q1": true, "q2": false}, "notes": {"q1": "71 days"}}
+{"id": "ITS05", "answers": {"q1": false, "q2": true, "q3": false, "q4": false}, "notes": {}}
+{"id": "MFG01", "answers": {"q1": true, "q2": false}, "notes": {}}
+{"id": "MFG02", "answers": {"q1": true, "q2": true, "q3": false}, "notes": {"q3": "CMM: 24.94 and 25.055 both outside -> still 2"}}
+{"id": "MFG03", "answers": {"q1": true, "q2": true, "q3": true, "q4": false}, "notes": {"q3": "22/4000 = 0.55%"}}
+{"id": "MFG04", "answers": {"q1": true}, "notes": {"q1": "today 11-16 is exactly the 10th working day"}}
+{"id": "MFG05", "answers": {"q1": false}, "notes": {}}
+{"id": "EDU01", "answers": {"q1": false, "q2": false, "q3": true}, "notes": {"q1": "14th day = Thu 2026-10-15; filed 10-16", "q3": "Literal: first working day after day 14 is Fri 10-16 = filing date -> Tak; under the usual rule (extension only if day 14 is non-working) it would be late."}}
+{"id": "EDU02", "answers": {"q1": true, "q2": true, "q3": false}, "notes": {}}
+{"id": "EDU03", "answers": {"q1": false}, "notes": {"q1": "6150/4 = 1537.50"}}
+{"id": "EDU04", "answers": {"q1": true, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "EDU05", "answers": {"q1": true, "q2": false}, "notes": {}}
+{"id": "RE01", "answers": {"q1": false}, "notes": {}}
+{"id": "RE02", "answers": {"q1": true}, "notes": {"q1": "day 14 after 10-06 = 10-20 (inclusive); 31.40+12.05+7.10=50.55>50"}}
+{"id": "RE03", "answers": {"q1": false}, "notes": {"q1": "hose between shutoff valve and faucet = beyond the valve"}}
+{"id": "RE04", "answers": {"q1": true}, "notes": {}}
+{"id": "RE05", "answers": {"q1": false, "q2": true, "q3": true}, "notes": {"q1": "day 30 = 2026-11-11, filed 11-12", "q2": "11-11 is Independence Day (Wed)", "q3": "next working day = 11-12"}}
+{"id": "ECM01", "answers": {"q1": true, "q2": true, "q3": false, "q4": true, "q5": true, "q6": false}, "notes": {"q5": "day 14 after 10-02 = 10-16, filed that day", "q6": "purchase date not given; cannot confirm"}}
+{"id": "ECM02", "answers": {"q1": true, "q2": true, "q3": false, "q4": false, "q5": true, "q6": false}, "notes": {"q6": "purchase date not given; cannot confirm"}}
+{"id": "ECM03", "answers": {"q1": false, "q2": true, "q3": true, "q4": false, "q5": false, "q6": true}, "notes": {"q5": "not delivered, no delivery date", "q6": "day 30 = 11-04, filed 10-19"}}
+{"id": "ECM04", "answers": {"q1": true, "q2": true, "q3": true, "q4": false, "q5": false, "q6": false}, "notes": {"q5": "not delivered", "q6": "day 30 = 10-28, filed 10-29"}}
+{"id": "ECM05", "answers": {"q1": true, "q2": true, "q3": false, "q4": true, "q5": true, "q6": false}, "notes": {"q5": "day 14 = 11-02, filed 10-26", "q6": "purchase date not given; cannot confirm"}}
+{"id": "K01", "answers": {"q1": true, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K02", "answers": {"q1": false, "q2": true, "q3": true, "q4": true, "q5": true}, "notes": {}}
+{"id": "K03", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": false}, "notes": {}}
+{"id": "K04", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true}, "notes": {}}
+{"id": "K05", "answers": {"q1": true, "q2": true, "q3": false, "q4": false, "q5": false}, "notes": {}}
+{"id": "K06", "answers": {"q1": true, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K07", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": false}, "notes": {}}
+{"id": "K08", "answers": {"q1": true, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K09", "answers": {"q1": true, "q2": false, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K10", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true}, "notes": {}}
+{"id": "K11", "answers": {"q1": false, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K12", "answers": {"q1": true, "q2": true, "q3": true}, "notes": {}}
+{"id": "K13", "answers": {"q1": false, "q2": true, "q3": true}, "notes": {"q2": "\"5 maja tego roku\" counts as a date"}}
+{"id": "K14", "answers": {"q1": true, "q2": false, "q3": true}, "notes": {}}
+{"id": "K15", "answers": {"q1": true, "q2": true, "q3": true}, "notes": {}}
+{"id": "K16", "answers": {"q1": true, "q2": true, "q3": false}, "notes": {}}
+{"id": "K17", "answers": {"q1": true, "q2": true}, "notes": {}}
+{"id": "K18", "answers": {"q1": true, "q2": false}, "notes": {}}
+{"id": "K19", "answers": {"q1": false, "q2": true}, "notes": {}}
+{"id": "K20", "answers": {"q1": true, "q2": true}, "notes": {}}
+{"id": "K21", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true, "q6": true}, "notes": {}}
+{"id": "K22", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": false, "q6": false}, "notes": {}}
+{"id": "K23", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true, "q6": false}, "notes": {}}
+{"id": "K24", "answers": {"q1": true, "q2": true, "q3": false, "q4": true, "q5": false, "q6": false}, "notes": {}}
+{"id": "K25", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true, "q6": true}, "notes": {}}
+{"id": "K26", "answers": {"q1": false, "q2": true, "q3": true, "q4": true, "q5": true, "q6": false}, "notes": {"q5": "unknown person scraped car and drove off, so another driver"}}
+{"id": "K27", "answers": {"q1": true, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K28", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": false}, "notes": {}}
+{"id": "K29", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": true}, "notes": {}}
+{"id": "K30", "answers": {"q1": false, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K31", "answers": {"q1": true, "q2": true, "q3": false, "q4": false, "q5": false}, "notes": {"q2": "names only \"kwota\", vague but it names the field"}}
+{"id": "K32", "answers": {"q1": true, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K33", "answers": {"q1": true, "q2": true, "q3": true, "q4": false}, "notes": {}}
+{"id": "K34", "answers": {"q1": true, "q2": true, "q3": false, "q4": false}, "notes": {}}
+{"id": "K35", "answers": {"q1": true, "q2": true, "q3": false, "q4": true}, "notes": {"q3": "payment method not stated"}}
+{"id": "K36", "answers": {"q1": false, "q2": false, "q3": false, "q4": true}, "notes": {}}
+{"id": "K37", "answers": {"q1": true, "q2": true, "q3": true, "q4": false, "q5": false}, "notes": {}}
+{"id": "K38", "answers": {"q1": true, "q2": true, "q3": true, "q4": true, "q5": false}, "notes": {}}
+{"id": "K40", "answers": {"q1": false, "q2": false, "q3": false, "q4": false, "q5": false}, "notes": {"q2": "\"Nic nie działa\" is too vague to count as a problem description"}}
