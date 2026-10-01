@@ -1,0 +1,66 @@
+Authoring brief for experiment 05 decompositions (kept in the repo for transparency).
+
+GOAL. For each rule-based decision item in items.jsonl, split the compound rule into atomic yes/no sub-questions about
+the state, plus a fixed boolean combiner (Python expression) that implements the rule exactly as the rule text states
+it (AND / OR / IF-THEN / exceptions / precedence of options). Fast decision models will answer each sub-question
+separately (state + one sub-question, options "Tak"/"Nie"); code combines the answers.
+
+ROW FORMAT (one JSON object per line, UTF-8, ensure_ascii=False):
+{"id": "ADM01",
+ "subquestions": [
+   {"sid": "q1", "kind": "arith", "text": "Czy odwołanie nadano w placówce pocztowej najpóźniej w 14. dniu, licząc od dnia następującego po dniu doręczenia decyzji?",
+    "calc": "D(V['nadanie']) <= add_days(V['doreczenie'], 14)"},
+   {"sid": "q2", "kind": "arith", "text": "Czy 14. dzień, licząc od dnia następującego po dniu doręczenia decyzji, przypada w sobotę, niedzielę lub dzień ustawowo wolny od pracy (w tym 11 listopada)?",
+    "calc": "wd(add_days(V['doreczenie'], 14)) >= 5 or add_days(V['doreczenie'], 14) == D('2026-11-11')"},
+   {"sid": "q3", "kind": "arith", "text": "Czy odwołanie nadano w placówce pocztowej najpóźniej w pierwszym dniu roboczym następującym po 14. dniu, licząc od dnia następującego po dniu doręczenia decyzji?",
+    "calc": "D(V['nadanie']) <= next_workday(add_days(V['doreczenie'], 15), holidays=['2026-11-11'])"}],
+ "values": {"doreczenie": "2026-10-28", "nadanie": "2026-11-12"},
+ "combiner": "q1 or (q2 and q3)",
+ "note": "In time if posted by day 14, or if day 14 is a Saturday/holiday and posted by the next working day."}
+
+FIELDS.
+- sid: q1, q2, ... in order.
+- kind "read": a reading question about the state (is an order number given, does the client demand a refund, is the
+  client a natural person, is the error message quoted, was the work related to a network failure ...).
+- kind "arith": anything that needs a date difference, a deadline, a weekday or holiday check, an amount or threshold
+  comparison, a count, a sum, a division (per-person income), a duration (years of experience). Mark EVERY such
+  comparison arith, even an easy one ("Czy waga przesyłki przekracza 30 kg?").
+  "text" is the yes/no question asked to the model in variant A, in the rule's own wording.
+  "calc" is a Python expression used in variant B that computes the same answer from V (the values) and, when needed,
+  from read sub-answers by sid (e.g. "months_incl(V['p1_od'], V['p1_do']) + (months_incl(V['p2_od'], V['today_m']) if q2 else 0) >= 36").
+  Helpers (decomp.py): D('YYYY-MM-DD'), days(a, b) = b - a in days, add_days(d, n), add_months(d, n),
+  wd(d) (0 = Monday .. 6 = Sunday), next_workday(d, holidays=[...], saturday_free=True) (d itself if a working day;
+  Sundays always non-working), months_incl('YYYY-MM', 'YYYY-MM') (inclusive month count: 2019-09..2021-08 = 24),
+  plus min, max, abs, round, sum, len, any, all, int, float and normal arithmetic / comparisons.
+- values: literal values copied from the state (dates as 'YYYY-MM-DD', months as 'YYYY-MM', amounts and counts as
+  numbers, "obecnie" in a CV = the month of the stated "Dziś jest ..." date). Only values the state states explicitly.
+  {} when there is no arith sub-question.
+- combiner: Python expression over the sids. noul items: returns a bool, True = the first option (the "yes" option,
+  gold 0), False = the second option (gold 1). choice items: returns the option INDEX into the item's "options" list
+  (0-based), e.g. "1 if q1 else (2 if (q2 and q3) else 0)". Use and / or / not / ... if ... else ....
+- note: one sentence on how the rule maps to the combiner, and anything a reviewer should know.
+
+RULES FOR SUB-QUESTIONS.
+1. Faithful to the rule text: each sub-question is one condition (or one part of a condition) of the rule, in the
+   rule's wording. No extra information, no domain knowledge the rule does not state, no hints.
+2. Never mention item-specific facts or the answer in a sub-question (no "Czy numer 55123 jest podany?", no "Czy
+   nadanie 2026-11-12 ..."). Write sub-questions that would work for any state under the same rule. Items that share
+   the same rule text get the same sub-questions and combiner.
+3. Atomic: one yes/no fact per sub-question. Split "contains (1) X, (2) Y and (3) Z" into three questions. Split a
+   conditional clause "..., (4) W, ale tylko wtedy, gdy C" into "Czy C?" and "Czy W?" with combiner "... and (not qC or qW)".
+   Split "chyba że E" the same way. Exceptions that waive a condition become OR terms.
+4. Self-contained: the model sees only the state and the single sub-question. Each sub-question must make sense on its
+   own (repeat the definition it needs, e.g. "Czy zgłoszenie zawiera żądanie klienta, czyli naprawę, wymianę, obniżenie
+   ceny albo zwrot pieniędzy?").
+5. Polish, natural, a yes/no question ending with "?". Prefer positive phrasing ("Czy podano ...?") over negations.
+6. Keep the number of sub-questions small (typically 2-6, at most 8).
+7. For choice items, follow the rule's precedence exactly (e.g. "tryb awaryjny zawsze, gdy ...; w pozostałych
+   przypadkach ...").
+8. Write from the rule text, not from the gold label. Do not open any model output files (raw_*.jsonl, results.*,
+   analysis_out.txt) in experiments 01-04. A separate checker will later answer every sub-question from the state and
+   test that the combiner reproduces the gold label.
+
+VALIDATE your file with
+  cd /Users/greg/apps/greg/system-1-ai/experiments/05-rule-decomposition && python3 check_decomp.py --file <your file> --only <comma-separated ids>
+(structure, every combiner and calc evaluates for all answer combinations). Fix until it reports 0 problems.
+Do not run models, do not call APIs, do not git commit, do not edit any other file.

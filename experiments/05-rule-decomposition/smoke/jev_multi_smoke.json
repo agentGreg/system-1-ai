@@ -1,0 +1,25 @@
+{
+ "status": 200,
+ "latency_ms": 568.9584580250084,
+ "model": "typesafe/jev-1.13-20260917",
+ "answers": {
+  "q1": {
+   "type": "noul",
+   "noul": 0.99
+  },
+  "q2": {
+   "type": "noul",
+   "noul": 0.99
+  },
+  "q3": {
+   "type": "noul",
+   "noul": 0.05
+  }
+ },
+ "usage": {
+  "input_tokens": 414,
+  "output_tokens": 55,
+  "cost": 1.7388e-05
+ },
+ "error": null
+}

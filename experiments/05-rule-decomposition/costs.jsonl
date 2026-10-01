@@ -1,0 +1,1 @@
+{"ts": "2026-10-01T12:13:01.734225+00:00", "label": "smoke multi-question", "model_requested": "typesafe/jev-1.13", "model_served": "typesafe/jev-1.13-20260917", "id": "SMOKE", "cost": 1.7388e-05, "n_q": 3}
