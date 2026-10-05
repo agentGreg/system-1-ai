@@ -1,0 +1,54 @@
+{
+ "system": "Remek/basal-1.5-mini",
+ "hf_revision": "1978d0705ce09cd2d7d8d3e87b304468121e7255",
+ "dtype": "bfloat16",
+ "device": "mps",
+ "orders": 2,
+ "set": "rc_orig",
+ "facts": "off",
+ "rule_in_state": true,
+ "temperatures": {
+  "choice": 1.1387886347566916,
+  "noul": 1.3939382634489992,
+  "score": 1.5422108254079405
+ },
+ "thresholds": {
+  "0.01": 0.9546241492914076,
+  "0.05": 0.7629656203142733
+ },
+ "calibration_keys": [
+  "temperature_per_prim",
+  "thresholds",
+  "fitted_on",
+  "certified_on",
+  "evaluated_on",
+  "eval_dtype"
+ ],
+ "basal_json": {
+  "name": "basal-1.5-mini",
+  "version": "1.5",
+  "parameters": "1.5B",
+  "readout": {
+   "kind": "letter logits",
+   "letters": "ABCDEFGHIJ",
+   "prefill": "{\"answer\": \"",
+   "templates": "basal-1.0 (unchanged prompt contract)",
+   "order_policy": "probabilities averaged over original and reversed option order",
+   "eval_dtype": "float32"
+  },
+  "calibration": "CALIBRATION.json (per-type temperatures, certified confidence thresholds)",
+  "serving": "basal-serve --mode fast (no exit heads for these weights)",
+  "test_metrics": {
+   "acc": 0.8320093457943926,
+   "n_items": 8560
+  }
+ },
+ "load_s": 0.6585988750011893,
+ "torch": "2.14.0",
+ "hardware": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.8"
+ }
+}

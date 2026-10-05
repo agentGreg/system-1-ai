@@ -1,0 +1,2 @@
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 26.15it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 26.09it/s]
+basal: model Remek/basal-1.5-max-MLX-8bit mode mlx ready in 2s on port 8000

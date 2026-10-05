@@ -1,0 +1,23 @@
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|██████████| 11/11 [00:00<00:00, 2964.93it/s]
+Loading weights:   0%|          | 0/963 [00:00<?, ?it/s]Loading weights: 100%|██████████| 963/963 [00:00<00:00, 26610.24it/s]
+K06@changed gold=1 pred=1 p=0.987 113ms
+K14@changed gold=0 pred=0 p=0.996 103ms
+K17@changed gold=1 pred=1 p=0.988 114ms
+K18@changed gold=0 pred=0 p=0.997 111ms
+K21@changed gold=1 pred=0 p=0.526 133ms
+K28@changed gold=0 pred=0 p=0.948 124ms
+K33@changed gold=1 pred=1 p=0.969 115ms
+K38@changed gold=0 pred=0 p=0.748 114ms
+ADM01@changed gold=1 pred=0 p=0.699 135ms
+LAW04@changed gold=0 pred=0 p=0.978 145ms
+HR01@changed gold=1 pred=0 p=0.906 135ms
+MED02@changed gold=0 pred=0 p=0.713 145ms
+INS02@changed gold=1 pred=1 p=0.965 142ms
+BNK03@changed gold=1 pred=0 p=0.754 146ms
+LOG01@changed gold=0 pred=0 p=0.767 143ms
+ITS04@changed gold=1 pred=1 p=0.875 122ms
+MFG01@changed gold=0 pred=1 p=0.826 135ms
+EDU03@changed gold=0 pred=0 p=0.741 122ms
+RE05@changed gold=1 pred=0 p=0.767 125ms
+ECM04@changed gold=0 pred=0 p=0.935 168ms
+load 1.4s  acc 0.700

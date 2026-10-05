@@ -28,6 +28,11 @@ typed options, no text generation) with generative "thinking" LLMs on everyday b
   committed before any run, checked blind against true sub-answers). Variant A asks every sub-question to the model;
   variant B computes dates, deadlines and thresholds in Python and asks only the reading questions. basal-1.0 (4.5B,
   1.5B) and raw Jev 1.13 vs their compound-question baselines, with coverage at 0.913. See `results.md` there.
+- `experiments/06-basal-1.5/`: basal-1.5, basal-1.5-max and basal-1.5-mini (released 2026-10-05) on the experiment
+  03 and 04 sets with the same protocol (accuracy, coverage, calibration), latency on the Mac with plain PyTorch and
+  with the engine's MLX and MPS paths, `"facts": "auto"` on the 99 rule items against experiment 05's decompositions,
+  SOAM (several questions about one state in one request), and a rule-change test: 20 rules edited so the correct
+  answer flips, run on basal-1.0/1.5 and raw Jev 1.13 without retraining, with evidence spans. See `results.md` there.
 
 ## Running
 
@@ -47,18 +52,21 @@ Experiment 02 needs only Python 3 (standard library) and an OpenRouter key in th
 Experiment 03: `python build_dataset.py`, then `annotate.py`, `run_basal.py`, `run_jev.py`, `run_cloud.py`,
 `run_llm.py` and `analyze.py` (commands in the docstrings; the API scripts use the same keychain entry).
 Experiment 04 works the same way (`build_dataset.py` reads `dataset_src/`; see the end of its `results.md`).
+Experiment 06 also needs basal v1.5.0 with the MLX extra in its own environment for the `basal-serve` runs (commands at the
+end of its `results.md`).
 
-`basal_prompt.py` is a verbatim copy of `basal/prompt.py` from https://github.com/rkinas/basal (Apache-2.0).
+`basal_prompt.py` is a verbatim copy of `basal/prompt.py` from https://github.com/rkinas/basal (Apache-2.0); experiment 06
+also vendors `basal/facts.py` of v1.5.0 as `basal_facts.py`.
 
 ## Use of model outputs
 
 Raw model outputs in this repo are published for evaluation only. Do not use them to train, fine-tune or distill
 models. Jev results come from the alpha endpoint https://openrouter.ai/api/alpha/decisions (typesafe/jev-1.13) and are
-a snapshot as of 2026-09-30 (experiment 05: 2026-10-01); this repo is independent and not affiliated with or endorsed by TypeSafe AI, OpenRouter
+a snapshot as of 2026-09-30 (experiment 05: 2026-10-01; experiment 06 rule-change runs: 2026-10-05); this repo is independent and not affiliated with or endorsed by TypeSafe AI, OpenRouter
 or any other model provider.
 
 ## License
 
-Code is MIT (see `LICENSE`), except `basal_prompt.py`, which stays Apache-2.0 as in the original. The test set (`decisions.jsonl`) and results are CC BY 4.0: reuse them freely with attribution.
+Code is MIT (see `LICENSE`), except `basal_prompt.py` and `basal_facts.py`, which stay Apache-2.0 as in the original. The test set (`decisions.jsonl`) and results are CC BY 4.0: reuse them freely with attribution.
 
 Write-up: [Your AI thinks too long: System 1 AI explained](https://agentgreg.ai/research/system-one-ai/) ([PL](https://agentgreg.ai/pl/research/system-one-ai/)).

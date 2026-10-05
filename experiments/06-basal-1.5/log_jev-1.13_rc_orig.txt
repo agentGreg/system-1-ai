@@ -1,0 +1,21 @@
+K06@orig gold=0 pred=0 p=0.925 282ms served=typesafe/jev-1.13-20260917
+K14@orig gold=1 pred=1 p=0.945 272ms served=typesafe/jev-1.13-20260917
+K17@orig gold=0 pred=0 p=0.965 403ms served=typesafe/jev-1.13-20260917
+K18@orig gold=1 pred=1 p=0.9299999999999999 296ms served=typesafe/jev-1.13-20260917
+K21@orig gold=0 pred=0 p=0.945 304ms served=typesafe/jev-1.13-20260917
+K28@orig gold=1 pred=1 p=0.92 284ms served=typesafe/jev-1.13-20260917
+K33@orig gold=0 pred=0 p=0.95 344ms served=typesafe/jev-1.13-20260917
+K38@orig gold=1 pred=1 p=0.8150000000000001 272ms served=typesafe/jev-1.13-20260917
+ADM01@orig gold=0 pred=0 p=0.78 405ms served=typesafe/jev-1.13-20260917
+LAW04@orig gold=1 pred=1 p=0.895 262ms served=typesafe/jev-1.13-20260917
+HR01@orig gold=0 pred=0 p=0.75 300ms served=typesafe/jev-1.13-20260917
+MED02@orig gold=1 pred=1 p=0.615 265ms served=typesafe/jev-1.13-20260917
+INS02@orig gold=0 pred=0 p=0.945 266ms served=typesafe/jev-1.13-20260917
+BNK03@orig gold=0 pred=0 p=0.855 281ms served=typesafe/jev-1.13-20260917
+LOG01@orig gold=1 pred=0 p=0.575 277ms served=typesafe/jev-1.13-20260917
+ITS04@orig gold=0 pred=0 p=0.935 303ms served=typesafe/jev-1.13-20260917
+MFG01@orig gold=1 pred=1 p=0.9349999999999999 278ms served=typesafe/jev-1.13-20260917
+EDU03@orig gold=1 pred=0 p=0.535 307ms served=typesafe/jev-1.13-20260917
+RE05@orig gold=0 pred=0 p=0.855 292ms served=typesafe/jev-1.13-20260917
+ECM04@orig gold=1 pred=0 p=0.665 271ms served=typesafe/jev-1.13-20260917
+acc 17/20  run cost $0.00086  total spent $0.00089

@@ -1,0 +1,23 @@
+start ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-mini --set e03 --out lat_basal-1.5-mini_e03.jsonl 11:02:01
+end ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-mini --set e03 --out lat_basal-1.5-mini_e03.jsonl 11:02:13
+start ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-mini --set e04 --out lat_basal-1.5-mini_e04.jsonl 11:02:13
+end ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-mini --set e04 --out lat_basal-1.5-mini_e04.jsonl 11:02:28
+start ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-4.5B --set e03 --out lat_basal-1.5-4.5B_e03.jsonl 11:02:28
+end ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-4.5B --set e03 --out lat_basal-1.5-4.5B_e03.jsonl 11:02:56
+start ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-4.5B --set e04 --out lat_basal-1.5-4.5B_e04.jsonl 11:02:56
+end ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-4.5B --set e04 --out lat_basal-1.5-4.5B_e04.jsonl 11:03:31
+start ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-max --set e03 --out lat_basal-1.5-max_e03.jsonl 11:03:31
+end ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-max --set e03 --out lat_basal-1.5-max_e03.jsonl 11:04:32
+start ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-max --set e04 --out lat_basal-1.5-max_e04.jsonl 11:04:32
+end ../../.venv/bin/python run_basal.py --model Remek/basal-1.5-max --set e04 --out lat_basal-1.5-max_e04.jsonl 11:05:49
+start bash run_serve.sh Remek/basal-1.5-mini-MLX-8bit mlx basal-1.5-mini lat_e03 lat_e04 soam 11:05:51
+end bash run_serve.sh Remek/basal-1.5-mini-MLX-8bit mlx basal-1.5-mini lat_e03 lat_e04 soam 11:07:00
+start bash run_serve.sh Remek/basal-1.5-4.5B-MLX-8bit mlx basal-1.5-4.5B lat_e03 lat_e04 soam 11:07:02
+end bash run_serve.sh Remek/basal-1.5-4.5B-MLX-8bit mlx basal-1.5-4.5B lat_e03 lat_e04 soam 11:10:03
+start bash run_serve.sh Remek/basal-1.5-max-MLX-8bit mlx basal-1.5-max lat_e03 lat_e04 11:10:05
+end bash run_serve.sh Remek/basal-1.5-max-MLX-8bit mlx basal-1.5-max lat_e03 lat_e04 11:12:00
+start bash run_serve.sh Remek/basal-1.5-mini mps basal-1.5-mini lat_e03 lat_e04 soam 11:12:02
+end bash run_serve.sh Remek/basal-1.5-mini mps basal-1.5-mini lat_e03 lat_e04 soam 11:12:55
+start bash run_serve.sh Remek/basal-1.5-4.5B mps basal-1.5-4.5B lat_e03 lat_e04 soam evidence 11:12:57
+end bash run_serve.sh Remek/basal-1.5-4.5B mps basal-1.5-4.5B lat_e03 lat_e04 soam evidence 11:15:08
+ALLDONE

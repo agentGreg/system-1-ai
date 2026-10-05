@@ -1,0 +1,373 @@
+## Accuracy (exp 03 clean n=198, exp 04 n=204, both = 402), Wilson 95% CI
+
+| system | exp 03 | exp 04 | exp 04 rules (60) | exp 04 non-rule (144) | both sets |
+|---|---|---|---|---|---|
+| basal-1.0-4.5B | 86.9% (172/198) [81-91] | 81.9% (167/204) [76-87] | 38/60 [51-74] | 129/144 [84-94] | 84.3% (339/402) [80-88] |
+| basal-1.0-1.5B | 79.3% (157/198) [73-84] | 77.5% (158/204) [71-83] | 38/60 [51-74] | 120/144 [76-89] | 78.4% (315/402) [74-82] |
+| basal-1.5-mini | 88.9% (176/198) [84-93] | 81.4% (166/204) [75-86] | 37/60 [49-73] | 129/144 [84-94] | 85.1% (342/402) [81-88] |
+| basal-1.5 (4.5B) | 91.9% (182/198) [87-95] | 85.8% (175/204) [80-90] | 39/60 [52-76] | 136/144 [89-97] | 88.8% (357/402) [85-92] |
+| basal-1.5-max | 98.0% (194/198) [95-99] | 91.7% (187/204) [87-95] | 45/60 [63-84] | 142/144 [95-100] | 94.8% (381/402) [92-97] |
+| Jev 1.13, 2 orders | 98.5% (195/198) [96-99] | 94.6% (193/204) [91-97] | 49/60 [70-89] | 144/144 [97-100] | 96.5% (388/402) [94-98] |
+| Jev 1.13, order 1 | 98.0% (194/198) [95-99] | 94.6% (193/204) [91-97] | 50/60 [72-91] | 143/144 [96-100] | 96.3% (387/402) [94-98] |
+| Gemini 3.8 Flash (medium) | 100.0% (198/198) [98-100] | 100.0% (204/204) [98-100] | 60/60 [94-100] | 144/144 [97-100] | 100.0% (402/402) [99-100] |
+
+## e03 by category
+
+| system | reklamacja | routing | eskalacja | kompletnosc | irytacja | phishing |
+|---|---|---|---|---|---|---|
+| basal-1.0-4.5B | 39/40 | 36/40 | 37/40 | 33/39 | 13/19 | 14/20 |
+| basal-1.0-1.5B | 32/40 | 38/40 | 38/40 | 23/39 | 12/19 | 14/20 |
+| basal-1.5-mini | 38/40 | 39/40 | 37/40 | 27/39 | 17/19 | 18/20 |
+| basal-1.5 (4.5B) | 40/40 | 39/40 | 37/40 | 33/39 | 16/19 | 17/20 |
+| basal-1.5-max | 40/40 | 40/40 | 39/40 | 37/39 | 18/19 | 20/20 |
+| Jev 1.13, 2 orders | 40/40 | 39/40 | 40/40 | 38/39 | 19/19 | 19/20 |
+| Jev 1.13, order 1 | 40/40 | 39/40 | 40/40 | 38/39 | 19/19 | 18/20 |
+| Gemini 3.8 Flash (medium) | 40/40 | 40/40 | 40/40 | 39/39 | 19/19 | 20/20 |
+
+## e04 by domain
+
+| system | administracja | kancelaria | hr | przychodnia | ubezpieczenia | bank_aml | logistyka | it_security | produkcja | uczelnia | wspolnota | moderacja |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| basal-1.0-4.5B | 15/17 | 14/17 | 15/17 | 14/17 | 15/17 | 14/17 | 14/17 | 11/17 | 15/17 | 13/17 | 15/17 | 12/17 |
+| basal-1.0-1.5B | 15/17 | 15/17 | 13/17 | 15/17 | 14/17 | 13/17 | 13/17 | 10/17 | 13/17 | 13/17 | 14/17 | 10/17 |
+| basal-1.5-mini | 13/17 | 15/17 | 15/17 | 14/17 | 16/17 | 16/17 | 13/17 | 13/17 | 14/17 | 14/17 | 12/17 | 11/17 |
+| basal-1.5 (4.5B) | 15/17 | 15/17 | 15/17 | 15/17 | 15/17 | 14/17 | 14/17 | 12/17 | 16/17 | 15/17 | 16/17 | 13/17 |
+| basal-1.5-max | 16/17 | 14/17 | 17/17 | 17/17 | 16/17 | 15/17 | 17/17 | 13/17 | 15/17 | 16/17 | 16/17 | 15/17 |
+| Jev 1.13, 2 orders | 16/17 | 16/17 | 17/17 | 16/17 | 16/17 | 15/17 | 16/17 | 17/17 | 16/17 | 15/17 | 17/17 | 16/17 |
+| Jev 1.13, order 1 | 16/17 | 16/17 | 17/17 | 16/17 | 16/17 | 15/17 | 16/17 | 17/17 | 17/17 | 15/17 | 17/17 | 15/17 |
+| Gemini 3.8 Flash (medium) | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 |
+
+## e04 by type
+
+| system | noul | choice | score |
+|---|---|---|---|
+| basal-1.0-4.5B | 71/96 | 60/65 | 36/43 |
+| basal-1.0-1.5B | 67/96 | 59/65 | 32/43 |
+| basal-1.5-mini | 68/96 | 60/65 | 38/43 |
+| basal-1.5 (4.5B) | 73/96 | 62/65 | 40/43 |
+| basal-1.5-max | 82/96 | 63/65 | 42/43 |
+| Jev 1.13, 2 orders | 85/96 | 65/65 | 43/43 |
+| Jev 1.13, order 1 | 86/96 | 65/65 | 42/43 |
+| Gemini 3.8 Flash (medium) | 96/96 | 65/65 | 43/43 |
+
+## exp 03 tricky (clean)
+
+- basal-1.0-4.5B: 44/63
+- basal-1.0-1.5B: 41/63
+- basal-1.5-mini: 46/63
+- basal-1.5 (4.5B): 49/63
+- basal-1.5-max: 62/63
+- Jev 1.13, 2 orders: 60/63
+- Jev 1.13, order 1: 59/63
+- Gemini 3.8 Flash (medium): 63/63
+
+## Paired: items fixed / broken vs basal-1.0-4.5B (both sets, 402)
+
+- basal-1.5-mini: fixes 29, breaks 26 (net +3)
+- basal-1.5 (4.5B): fixes 29, breaks 11 (net +18)
+- basal-1.5-max: fixes 50, breaks 8 (net +42)
+
+## Coverage at confidence thresholds (both sets pooled, 402; and per set)
+
+| system | threshold | exp 03 decided / errors | exp 04 decided / errors | both: decided | errors among decided [95% CI] | wrong items accepted (both) |
+|---|---|---|---|---|---|---|
+| basal-1.0-4.5B | 0.913 | 133/198 / 2 | 118/204 / 4 | 251/402 (62.4%) | 6 (2.4%) [1.1-5.1] | S13, P18, HR04, ITS14, EDU15, ECM07 |
+| basal-1.0-4.5B | 0.744 | 177/198 / 16 | 158/204 / 19 | 335/402 (83.3%) | 35 (10.4%) [7.6-14.2] | D14, D39, E20, E22, E34, K02, K03, K37, S08, S09, S11, S12, S13, P11, P15, P18, LAW04, LAW14, HR04, HR14, BNK02, BNK05, LOG15, ITS02, ITS03, ITS04, ITS07, ITS14, ITS17, MFG05, EDU15, EDU16, RE07, ECM04, ECM07 |
+| basal-1.0-1.5B | 0.913 | 67/198 / 2 | 89/204 / 5 | 156/402 (38.8%) | 7 (4.5%) [2.2-9.0] | R31, P04, HR04, ITS07, MFG05, RE07, ECM14 |
+| basal-1.0-1.5B | 0.744 | 127/198 / 8 | 125/204 / 17 | 252/402 (62.7%) | 25 (9.9%) [6.8-14.2] | R31, K16, K18, K19, S08, P01, P04, P09, HR04, MED02, INS16, BNK06, ITS02, ITS03, ITS07, ITS08, ITS14, ITS17, MFG05, MFG17, EDU14, EDU15, RE07, ECM09, ECM14 |
+| basal-1.5-mini | 0.913 | 130/198 / 2 | 102/204 / 6 | 232/402 (57.7%) | 8 (3.4%) [1.8-6.7] | E34, P15, HR04, ITS02, ITS03, MFG08, RE07, ECM02 |
+| basal-1.5-mini | 0.744 | 172/198 / 14 | 145/204 / 19 | 317/402 (78.9%) | 33 (10.4%) [7.5-14.3] | R31, D22, E26, E34, K02, K03, K07, K18, K22, K28, K33, S09, P04, P15, ADM03, ADM08, HR04, MED02, INS16, BNK02, LOG03, LOG05, ITS02, ITS03, ITS07, ITS14, MFG05, MFG08, RE03, RE07, ECM02, ECM04, ECM11 |
+| basal-1.5-mini | own 1% (0.955) | 107/198 / 2 | 77/204 / 0 | 184/402 (45.8%) | 2 (1.1%) [0.3-3.9] | E34, P15 |
+| basal-1.5-mini | own 5% (0.763) | 170/198 / 12 | 141/204 / 17 | 311/402 (77.4%) | 29 (9.3%) [6.6-13.1] | R31, D22, E26, E34, K02, K03, K07, K18, K28, S09, P04, P15, ADM03, ADM08, HR04, INS16, BNK02, LOG03, LOG05, ITS02, ITS03, ITS07, ITS14, MFG05, MFG08, RE03, RE07, ECM02, ECM04 |
+| basal-1.5 (4.5B) | 0.913 | 155/198 / 5 | 137/204 / 5 | 292/402 (72.6%) | 10 (3.4%) [1.9-6.2] | E34, K02, P09, P15, P18, INS02, INS04, ITS02, ITS03, ECM04 |
+| basal-1.5 (4.5B) | 0.744 | 181/198 / 10 | 178/204 / 16 | 359/402 (89.3%) | 26 (7.2%) [5.0-10.4] | E34, K02, K03, K07, K18, S05, S13, P09, P15, P18, ADM03, LAW02, HR14, INS02, INS04, BNK02, BNK04, BNK05, LOG15, ITS02, ITS03, ITS04, ITS14, MFG08, RE02, ECM04 |
+| basal-1.5 (4.5B) | own 1% (0.962) | 134/198 / 2 | 108/204 / 2 | 242/402 (60.2%) | 4 (1.7%) [0.6-4.2] | E34, P15, ITS02, ITS03 |
+| basal-1.5 (4.5B) | own 5% (0.765) | 176/198 / 10 | 174/204 / 16 | 350/402 (87.1%) | 26 (7.4%) [5.1-10.7] | E34, K02, K03, K07, K18, S05, S13, P09, P15, P18, ADM03, LAW02, HR14, INS02, INS04, BNK02, BNK04, BNK05, LOG15, ITS02, ITS03, ITS04, ITS14, MFG08, RE02, ECM04 |
+| basal-1.5-max | 0.913 | 178/198 / 1 | 163/204 / 4 | 341/402 (84.8%) | 5 (1.5%) [0.6-3.4] | K02, ADM03, LAW01, ITS02, ECM04 |
+| basal-1.5-max | 0.744 | 189/198 / 1 | 187/204 / 7 | 376/402 (93.5%) | 8 (2.1%) [1.1-4.1] | K02, ADM03, LAW01, LAW02, ITS02, ITS14, MFG04, ECM04 |
+| basal-1.5-max | own 1% (0.947) | 169/198 / 1 | 144/204 / 2 | 313/402 (77.9%) | 3 (1.0%) [0.3-2.8] | K02, ADM03, ITS02 |
+| basal-1.5-max | own 5% (0.729) | 190/198 / 1 | 187/204 / 7 | 377/402 (93.8%) | 8 (2.1%) [1.1-4.1] | K02, ADM03, LAW01, LAW02, ITS02, ITS14, MFG04, ECM04 |
+| Jev 1.13, 2 orders | 0.913 | 159/198 / 0 | 157/204 / 0 | 316/402 (78.6%) | 0 (0.0%) [0.0-1.2] | - |
+| Jev 1.13, 2 orders | 0.744 | 187/198 / 0 | 183/204 / 2 | 370/402 (92.0%) | 2 (0.5%) [0.1-1.9] | ADM03, EDU01 |
+| Jev 1.13, order 1 | 0.913 | 154/198 / 0 | 155/204 / 0 | 309/402 (76.9%) | 0 (0.0%) [0.0-1.2] | - |
+| Jev 1.13, order 1 | 0.744 | 186/198 / 0 | 183/204 / 3 | 369/402 (91.8%) | 3 (0.8%) [0.3-2.4] | ADM03, BNK05, EDU01 |
+
+## Calibration (top-option probability; both sets pooled, 402)
+
+| system | mean confidence | accuracy | ECE (8 bins) | Brier (top) |
+|---|---|---|---|---|
+| basal-1.0-4.5B | 0.887 | 0.843 | 0.059 | 0.107 |
+| basal-1.0-1.5B | 0.801 | 0.784 | 0.039 | 0.135 |
+| basal-1.5-mini | 0.869 | 0.851 | 0.054 | 0.112 |
+| basal-1.5 (4.5B) | 0.919 | 0.888 | 0.039 | 0.083 |
+| basal-1.5-max | 0.949 | 0.948 | 0.023 | 0.037 |
+| Jev 1.13, 2 orders | 0.931 | 0.965 | 0.035 | 0.025 |
+| Jev 1.13, order 1 | 0.927 | 0.963 | 0.039 | 0.026 |
+
+**basal-1.0-4.5B** reliability bins:
+  - [0.00,0.50): n=1 conf=0.468 acc=0.000
+  - [0.50,0.60): n=26 conf=0.560 acc=0.423
+  - [0.60,0.70): n=33 conf=0.654 acc=0.697
+  - [0.70,0.80): n=31 conf=0.759 acc=0.677
+  - [0.80,0.90): n=51 conf=0.852 acc=0.647
+  - [0.90,0.95): n=62 conf=0.931 acc=0.871
+  - [0.95,0.99): n=90 conf=0.976 acc=0.989
+  - [0.99,1.00): n=108 conf=0.996 acc=1.000
+
+**basal-1.0-1.5B** reliability bins:
+  - [0.00,0.50): n=10 conf=0.439 acc=0.300
+  - [0.50,0.60): n=63 conf=0.554 acc=0.476
+  - [0.60,0.70): n=58 conf=0.652 acc=0.707
+  - [0.70,0.80): n=46 conf=0.751 acc=0.696
+  - [0.80,0.90): n=58 conf=0.848 acc=0.862
+  - [0.90,0.95): n=47 conf=0.927 acc=0.872
+  - [0.95,0.99): n=81 conf=0.975 acc=0.975
+  - [0.99,1.00): n=39 conf=0.995 acc=1.000
+
+**basal-1.5-mini** reliability bins:
+  - [0.00,0.50): n=3 conf=0.467 acc=0.667
+  - [0.50,0.60): n=39 conf=0.557 acc=0.615
+  - [0.60,0.70): n=29 conf=0.649 acc=0.759
+  - [0.70,0.80): n=32 conf=0.748 acc=0.688
+  - [0.80,0.90): n=56 conf=0.848 acc=0.696
+  - [0.90,0.95): n=54 conf=0.928 acc=0.852
+  - [0.95,0.99): n=106 conf=0.974 acc=0.981
+  - [0.99,1.00): n=83 conf=0.996 acc=1.000
+
+**basal-1.5 (4.5B)** reliability bins:
+  - [0.50,0.60): n=13 conf=0.547 acc=0.615
+  - [0.60,0.70): n=21 conf=0.655 acc=0.571
+  - [0.70,0.80): n=29 conf=0.755 acc=0.724
+  - [0.80,0.90): n=41 conf=0.849 acc=0.732
+  - [0.90,0.95): n=41 conf=0.930 acc=0.805
+  - [0.95,0.99): n=106 conf=0.976 acc=0.962
+  - [0.99,1.00): n=151 conf=0.995 acc=1.000
+
+**basal-1.5-max** reliability bins:
+  - [0.00,0.50): n=1 conf=0.499 acc=0.000
+  - [0.50,0.60): n=9 conf=0.544 acc=0.667
+  - [0.60,0.70): n=13 conf=0.658 acc=0.385
+  - [0.70,0.80): n=13 conf=0.759 acc=0.846
+  - [0.80,0.90): n=23 conf=0.856 acc=0.913
+  - [0.90,0.95): n=33 conf=0.929 acc=0.939
+  - [0.95,0.99): n=87 conf=0.976 acc=0.966
+  - [0.99,1.00): n=223 conf=0.997 acc=1.000
+
+**Jev 1.13, 2 orders** reliability bins:
+  - [0.50,0.60): n=13 conf=0.552 acc=0.538
+  - [0.60,0.70): n=14 conf=0.651 acc=0.714
+  - [0.70,0.80): n=12 conf=0.752 acc=0.750
+  - [0.80,0.90): n=33 conf=0.855 acc=0.970
+  - [0.90,0.95): n=80 conf=0.927 acc=1.000
+  - [0.95,0.99): n=110 conf=0.969 acc=1.000
+  - [0.99,1.00): n=140 conf=0.999 acc=1.000
+
+**Jev 1.13, order 1** reliability bins:
+  - [0.00,0.50): n=2 conf=0.220 acc=0.500
+  - [0.50,0.60): n=12 conf=0.552 acc=0.500
+  - [0.60,0.70): n=12 conf=0.650 acc=0.667
+  - [0.70,0.80): n=12 conf=0.738 acc=0.833
+  - [0.80,0.90): n=36 conf=0.850 acc=0.944
+  - [0.90,0.95): n=76 conf=0.924 acc=1.000
+  - [0.95,0.99): n=114 conf=0.968 acc=1.000
+  - [0.99,1.00): n=138 conf=0.999 acc=1.000
+
+## Latency per decision on the Mac (median / p90 ms; one question, both option orders, batch 1)
+
+| system | path | exp 03 median | exp 03 p90 | exp 04 median | exp 04 p90 | agreement with PyTorch bf16 (both sets) | accuracy both sets |
+|---|---|---|---|---|---|---|---|
+| basal-1.0-4.5B | PyTorch MPS bf16, plain forward (run_basal.py; basal-1.0 numbers from exp 03/04) | 116 | 131 | 142 | 173 | reference | 84.3% (339/402) [80-88] |
+| basal-1.0-1.5B | PyTorch MPS bf16, plain forward (run_basal.py; basal-1.0 numbers from exp 03/04) | 46 | 52 | 57 | 65 | reference | 78.4% (315/402) [74-82] |
+| basal-1.5-mini | PyTorch MPS bf16, plain forward (run_basal.py; basal-1.0 numbers from exp 03/04); latency pass rerun, identical outputs on 402/402 | 47 | 52 | 57 | 65 | reference | 85.1% (342/402) [81-88] |
+| basal-1.5 (4.5B) | PyTorch MPS bf16, plain forward (run_basal.py; basal-1.0 numbers from exp 03/04); latency pass rerun, identical outputs on 402/402 | 114 | 131 | 152 | 187 | reference | 88.8% (357/402) [85-92] |
+| basal-1.5-max | PyTorch MPS bf16, plain forward (run_basal.py; basal-1.0 numbers from exp 03/04); latency pass rerun, identical outputs on 402/402 | 268 | 315 | 354 | 430 | reference | 94.8% (381/402) [92-97] |
+| basal-1.5-mini | basal-serve --mode mlx, -MLX-8bit port (HTTP localhost) | 52 | 54 | 60 | 67 | 402/402 | 85.1% (342/402) [81-88] |
+| basal-1.5-mini | basal-serve --mode mps, bf16 (HTTP localhost) | 41 | 45 | 49 | 57 | 402/402 | 85.1% (342/402) [81-88] |
+| basal-1.5 (4.5B) | basal-serve --mode mlx, -MLX-8bit port (HTTP localhost) | 151 | 159 | 165 | 179 | 398/402 | 88.8% (357/402) [85-92] |
+| basal-1.5 (4.5B) | basal-serve --mode mps, bf16 (HTTP localhost) | 98 | 103 | 123 | 138 | 400/402 | 88.8% (357/402) [85-92] |
+| basal-1.5-max | basal-serve --mode mlx, -MLX-8bit port (HTTP localhost) | 245 | 255 | 291 | 336 | 400/402 | 94.8% (381/402) [92-97] |
+
+load / meta e03 basal-1.0-4.5B: revision b952880, temps {'choice': 1.0748733399206964, 'noul': 1.4768261459394991, 'score': 1.1063695328888332}, thresholds None, load 4.0s
+
+load / meta e03 basal-1.0-1.5B: revision 81a74ac, temps {'choice': 0.9576032806985736, 'noul': 1.3348398541700341, 'score': 0.9576032806985736}, thresholds None, load 1.2s
+
+load / meta e03 basal-1.5-mini: revision 1978d07, temps {'choice': 1.1387886347566916, 'noul': 1.3939382634489992, 'score': 1.5422108254079405}, thresholds {'0.01': 0.9546241492914076, '0.05': 0.7629656203142733}, load 1.3s
+
+load / meta e03 basal-1.5 (4.5B): revision 784a683, temps {'choice': 1.2782470235604306, 'noul': 1.7817974362806785, 'score': 1.7562521603732995}, thresholds {'0.01': 0.9617328723432932, '0.05': 0.7651734485168759}, load 3.7s
+
+load / meta e03 basal-1.5-max: revision be1b5ee, temps {'choice': 1.4983070768766815, 'noul': 1.5422108254079405, 'score': 2.058604473286984}, thresholds {'0.01': 0.9467366879733952, '0.05': 0.7290524418873509}, load 8.4s
+
+load / meta e04 basal-1.0-4.5B: revision b952880, temps {'choice': 1.0748733399206964, 'noul': 1.4768261459394991, 'score': 1.1063695328888332}, thresholds None, load 3.1s
+
+load / meta e04 basal-1.0-1.5B: revision 81a74ac, temps {'choice': 0.9576032806985736, 'noul': 1.3348398541700341, 'score': 0.9576032806985736}, thresholds None, load 1.2s
+
+load / meta e04 basal-1.5-mini: revision 1978d07, temps {'choice': 1.1387886347566916, 'noul': 1.3939382634489992, 'score': 1.5422108254079405}, thresholds {'0.01': 0.9546241492914076, '0.05': 0.7629656203142733}, load 0.8s
+
+load / meta e04 basal-1.5 (4.5B): revision 784a683, temps {'choice': 1.2782470235604306, 'noul': 1.7817974362806785, 'score': 1.7562521603732995}, thresholds {'0.01': 0.9617328723432932, '0.05': 0.7651734485168759}, load 2.8s
+
+load / meta e04 basal-1.5-max: revision be1b5ee, temps {'choice': 1.4983070768766815, 'noul': 1.5422108254079405, 'score': 2.058604473286984}, thresholds {'0.01': 0.9467366879733952, '0.05': 0.7290524418873509}, load 3.7s
+
+## Errors (both sets)
+
+- **basal-1.0-4.5B** (63): R31(A->B, 0.58), D07(E->D, 0.55), D14(A->D, 0.87), D22(B->D, 0.58), D39(E->B, 0.82), E20(A->B, 0.88), E22(A->B, 0.89), E34(B->A, 0.87), K02(B->A, 0.84), K03(B->A, 0.76), K07(B->A, 0.63), K18(B->A, 0.57), K22(A->B, 0.64), K37(A->B, 0.75), S05(A->B, 0.64), S08(B->C, 0.83), S09(B->C, 0.87), S11(B->C, 0.75), S12(B->C, 0.91), S13(B->C, 0.93), P09(A->B, 0.64), P11(B->A, 0.77), P12(B->A, 0.53), P15(B->A, 0.81), P18(B->A, 0.94), P20(B->A, 0.67), ADM03(B->A, 0.59), ADM08(B->A, 0.71), LAW04(B->A, 0.75), LAW05(A->B, 0.58), LAW14(C->B, 0.79), HR04(A->B, 0.95), HR14(B->A, 0.88), MED13(B->C, 0.66), MED15(B->A, 0.59), MED17(D->A, 0.47), INS02(A->B, 0.66), INS04(B->A, 0.68), BNK02(A->B, 0.86), BNK04(B->A, 0.56), BNK05(B->A, 0.75), LOG01(B->A, 0.53), LOG05(B->A, 0.73), LOG15(C->B, 0.91), ITS02(B->A, 0.81), ITS03(B->A, 0.82), ITS04(A->B, 0.90), ITS07(A->B, 0.85), ITS14(A->B, 0.96), ITS17(D->C, 0.91), MFG01(B->A, 0.68), MFG05(A->B, 0.81), EDU01(B->A, 0.68), EDU03(B->A, 0.58), EDU15(C->D, 0.94), EDU16(B->C, 0.85), RE02(A->B, 0.55), RE07(A->B, 0.80), ECM04(B->A, 0.80), ECM07(A->B, 0.93), ECM08(A->B, 0.52), ECM09(C->A, 0.59), ECM14(E->A, 0.54)
+- **basal-1.0-1.5B** (87): R03(A->B, 0.54), R13(A->B, 0.61), R17(A->B, 0.52), R19(A->B, 0.74), R27(A->B, 0.52), R31(A->B, 0.93), R33(A->B, 0.56), R35(A->B, 0.52), D14(A->D, 0.45), D22(B->D, 0.58), E10(A->B, 0.63), E26(B->A, 0.65), K02(B->A, 0.64), K03(B->A, 0.59), K07(B->A, 0.57), K09(B->A, 0.60), K11(B->A, 0.55), K13(B->A, 0.56), K14(B->A, 0.64), K16(B->A, 0.81), K18(B->A, 0.78), K19(B->A, 0.79), K23(B->A, 0.73), K24(B->A, 0.60), K28(B->A, 0.59), K30(B->A, 0.62), K31(B->A, 0.55), K38(B->A, 0.72), S05(A->B, 0.47), S07(A->B, 0.51), S08(B->C, 0.76), S09(B->C, 0.73), S11(B->C, 0.52), S12(B->C, 0.59), S13(B->C, 0.66), P01(A->B, 0.90), P02(A->B, 0.57), P04(A->B, 0.93), P09(A->B, 0.82), P15(B->A, 0.59), P18(B->A, 0.59), ADM03(B->A, 0.58), ADM08(B->A, 0.65), LAW05(A->B, 0.66), LAW17(B->C, 0.39), HR01(A->B, 0.59), HR02(B->A, 0.50), HR04(A->B, 0.93), HR14(B->C, 0.40), MED02(B->A, 0.79), MED17(D->C, 0.52), INS04(B->A, 0.52), INS07(B->A, 0.52), INS16(B->C, 0.75), BNK02(A->B, 0.68), BNK04(B->A, 0.64), BNK06(A->B, 0.76), BNK09(E->B, 0.66), LOG01(B->A, 0.56), LOG03(B->A, 0.61), LOG05(B->A, 0.61), LOG15(C->D, 0.35), ITS02(B->A, 0.79), ITS03(B->A, 0.89), ITS04(A->B, 0.68), ITS07(A->B, 0.96), ITS08(A->B, 0.85), ITS14(A->B, 0.81), ITS17(D->C, 0.85), MFG05(A->B, 0.94), MFG08(B->A, 0.60), MFG12(C->D, 0.49), MFG17(D->A, 0.83), EDU01(B->A, 0.55), EDU14(A->D, 0.75), EDU15(C->D, 0.81), EDU16(B->D, 0.56), RE01(B->A, 0.57), RE04(A->B, 0.51), RE07(A->B, 0.97), ECM01(A->B, 0.71), ECM02(B->A, 0.66), ECM05(A->B, 0.51), ECM09(C->D, 0.79), ECM11(A->D, 0.58), ECM14(E->D, 0.93), ECM15(D->A, 0.45)
+- **basal-1.5-mini** (60): R17(A->B, 0.57), R31(A->B, 0.87), D22(B->D, 0.83), E10(A->B, 0.55), E26(B->A, 0.87), E34(B->A, 0.97), K02(B->A, 0.84), K03(B->A, 0.87), K07(B->A, 0.82), K16(B->A, 0.74), K18(B->A, 0.84), K22(A->B, 0.76), K23(B->A, 0.59), K27(A->B, 0.64), K28(B->A, 0.77), K32(A->B, 0.51), K33(A->B, 0.74), K37(A->B, 0.68), S09(B->C, 0.78), S13(B->C, 0.54), P04(A->B, 0.90), P15(B->A, 0.97), ADM02(A->B, 0.65), ADM03(B->A, 0.80), ADM05(B->A, 0.63), ADM08(B->A, 0.88), LAW05(A->B, 0.57), LAW14(C->B, 0.51), HR04(A->B, 0.93), HR14(B->A, 0.44), MED02(B->A, 0.74), MED04(A->B, 0.59), MED08(B->A, 0.63), INS16(B->C, 0.89), BNK02(A->B, 0.81), LOG01(B->A, 0.59), LOG02(A->B, 0.66), LOG03(B->A, 0.91), LOG05(B->A, 0.89), ITS02(B->A, 0.93), ITS03(B->A, 0.93), ITS07(A->B, 0.88), ITS14(A->B, 0.87), MFG05(A->B, 0.85), MFG08(B->A, 0.94), MFG17(D->A, 0.72), EDU01(B->A, 0.66), EDU03(B->A, 0.52), EDU16(B->C, 0.54), RE01(B->A, 0.70), RE02(A->B, 0.58), RE03(B->A, 0.81), RE04(A->B, 0.59), RE07(A->B, 0.92), ECM02(B->A, 0.92), ECM04(B->A, 0.90), ECM09(C->D, 0.58), ECM11(A->D, 0.74), ECM14(E->D, 0.73), ECM15(D->A, 0.58)
+- **basal-1.5 (4.5B)** (45): D22(B->D, 0.71), E26(B->A, 0.51), E28(B->A, 0.68), E34(B->A, 0.99), K02(B->A, 0.93), K03(B->A, 0.81), K07(B->A, 0.83), K18(B->A, 0.78), K23(B->A, 0.54), K28(B->A, 0.66), S05(A->B, 0.84), S09(B->C, 0.74), S13(B->C, 0.85), P09(A->B, 0.93), P15(B->A, 0.99), P18(B->A, 0.95), ADM03(B->A, 0.79), ADM08(B->A, 0.55), LAW02(B->A, 0.83), LAW14(C->B, 0.65), HR08(B->A, 0.64), HR14(B->A, 0.81), MED02(B->A, 0.67), MED03(B->A, 0.72), INS02(A->B, 0.93), INS04(B->A, 0.93), BNK02(A->B, 0.90), BNK04(B->A, 0.85), BNK05(B->A, 0.85), LOG01(B->A, 0.73), LOG05(B->A, 0.74), LOG15(C->B, 0.80), ITS02(B->A, 0.96), ITS03(B->A, 0.96), ITS04(A->B, 0.81), ITS14(A->B, 0.90), ITS17(D->C, 0.59), MFG08(B->A, 0.91), EDU01(B->A, 0.67), EDU03(B->A, 0.61), RE02(A->B, 0.79), ECM03(B->A, 0.50), ECM04(B->A, 0.93), ECM08(A->B, 0.68), ECM11(A->D, 0.70)
+- **basal-1.5-max** (21): E36(B->A, 0.67), K02(B->A, 0.96), K22(A->B, 0.69), S11(B->A, 0.50), ADM03(B->A, 0.97), LAW01(A->B, 0.93), LAW02(B->A, 0.89), LAW14(C->B, 0.70), INS01(B->A, 0.61), BNK01(B->A, 0.71), BNK05(B->A, 0.61), ITS02(B->A, 0.96), ITS03(B->A, 0.57), ITS04(A->B, 0.63), ITS14(A->B, 0.77), MFG02(A->B, 0.51), MFG04(A->B, 0.83), EDU03(B->A, 0.61), RE02(A->B, 0.68), ECM04(B->A, 0.92), ECM10(D->A, 0.56)
+- **Jev 1.13, 2 orders** (14): D22(B->D, 0.54), K22(A->B, 0.62), P13(B->A, 0.57), ADM03(B->A, 0.77), LAW02(B->A, 0.71), MED03(B->A, 0.57), INS06(B->A, 0.69), BNK04(B->A, 0.60), BNK05(B->A, 0.73), LOG01(B->A, 0.56), MFG02(A->B, 0.54), EDU01(B->A, 0.81), EDU03(B->A, 0.52), ECM04(B->A, 0.68)
+- **Jev 1.13, order 1** (15): D22(B->D, 0.50), K22(A->B, 0.63), P13(B->A, 0.58), P18(B->A, 0.50), ADM03(B->A, 0.80), LAW02(B->A, 0.73), MED03(B->A, 0.58), INS06(B->A, 0.65), BNK04(B->A, 0.62), BNK05(B->A, 0.77), LOG01(B->A, 0.57), EDU01(B->A, 0.83), EDU03(B->A, 0.52), ECM04(B->A, 0.69), ECM16(B->D, 0.00)
+- **Gemini 3.8 Flash (medium)** (0): 
+
+## facts:auto on the 99 rule items (compound question), Wilson 95% CI
+
+Conditions: compound = the exp 03/04 item as is (rule in the question); +facts = "facts": "auto" (basal.facts.inject on the state); rule in state = the 'Reguła:' text moved to the end of the state; rule in state +facts = moved, then inject (durations in the rule become visible to the facts code).
+
+| system | condition | exp 04 rules (60) | exp 03 completeness (39) | both (99) | accepted at 0.913 (errors) | facts block added (items) |
+|---|---|---|---|---|---|---|
+| basal-1.0-4.5B | compound | 38/60 [51-74] | 33/39 [70-93] | 71.7% (71/99) [62-80] | 19 (1) | - |
+| basal-1.0-4.5B | +facts | 39/60 [52-76] | 33/39 [70-93] | 72.7% (72/99) [63-81] | 20 (1) | 53 |
+| basal-1.0-4.5B | rule in state | 38/60 [51-74] | 29/39 [59-85] | 67.7% (67/99) [58-76] | 19 (1) | - |
+| basal-1.0-4.5B | rule in state +facts | 43/60 [59-81] | 29/39 [59-85] | 72.7% (72/99) [63-81] | 20 (1) | 56 |
+| basal-1.5-mini | compound | 37/60 [49-73] | 27/39 [54-81] | 64.6% (64/99) [55-73] | 28 (4) | - |
+| basal-1.5-mini | +facts | 33/60 [42-67] | 28/39 [56-83] | 61.6% (61/99) [52-71] | 29 (4) | 53 |
+| basal-1.5-mini | rule in state | 39/60 [52-76] | 24/39 [46-75] | 63.6% (63/99) [54-72] | 26 (4) | - |
+| basal-1.5-mini | rule in state +facts | 35/60 [46-70] | 23/39 [43-73] | 58.6% (58/99) [49-68] | 26 (3) | 56 |
+| basal-1.5 (4.5B) | compound | 39/60 [52-76] | 33/39 [70-93] | 72.7% (72/99) [63-81] | 50 (6) | - |
+| basal-1.5 (4.5B) | +facts | 39/60 [52-76] | 33/39 [70-93] | 72.7% (72/99) [63-81] | 48 (5) | 53 |
+| basal-1.5 (4.5B) | rule in state | 37/60 [49-73] | 33/39 [70-93] | 70.7% (70/99) [61-79] | 45 (5) | - |
+| basal-1.5 (4.5B) | rule in state +facts | 41/60 [56-79] | 33/39 [70-93] | 74.7% (74/99) [65-82] | 45 (2) | 56 |
+| basal-1.5-max | compound | 45/60 [63-84] | 37/39 [83-99] | 82.8% (82/99) [74-89] | 65 (5) | - |
+| basal-1.5-max | +facts | 45/60 [63-84] | 37/39 [83-99] | 82.8% (82/99) [74-89] | 63 (3) | 53 |
+| basal-1.5-max | rule in state | 46/60 [65-86] | 37/39 [83-99] | 83.8% (83/99) [75-90] | 62 (4) | - |
+| basal-1.5-max | rule in state +facts | 50/60 [72-91] | 37/39 [83-99] | 87.9% (87/99) [80-93] | 66 (4) | 56 |
+| *experiment 05 reference* | | | | | | |
+| basal-1.0-4.5B | compound (exp 05 table) | 38/60 [51-74] | 33/39 [70-93] | 71.7% (71/99) [62-80] | | |
+| basal-1.0-4.5B | A: split, model does arithmetic | 40/60 [54-77] | 36/39 [80-97] | 76.8% (76/99) [68-84] | | |
+| basal-1.0-4.5B | B: split + Python arithmetic | 59/60 [91-100] | 36/39 [80-97] | 96.0% (95/99) [90-98] | | |
+| basal-1.0-1.5B | compound (exp 05 table) | 38/60 [51-74] | 23/39 [43-73] | 61.6% (61/99) [52-71] | | |
+| basal-1.0-1.5B | A: split, model does arithmetic | 34/60 [44-68] | 30/39 [62-87] | 64.6% (64/99) [55-73] | | |
+| basal-1.0-1.5B | B: split + Python arithmetic | 54/60 [80-95] | 30/39 [62-87] | 84.8% (84/99) [76-91] | | |
+| Jev 1.13 | compound (exp 05 table) | 49/60 [70-89] | 38/39 [87-100] | 87.9% (87/99) [80-93] | | |
+| Jev 1.13 | A: split, model does arithmetic | 51/60 [74-92] | 39/39 [91-100] | 90.9% (90/99) [84-95] | | |
+| Jev 1.13 | B: split + Python arithmetic | 60/60 [94-100] | 39/39 [91-100] | 100.0% (99/99) [96-100] | | |
+| Gemini 3.8 Flash (medium) | compound (exp 05 table) | 60/60 [94-100] | 39/39 [91-100] | 100.0% (99/99) [96-100] | | |
+
+- basal-1.5-mini, +facts vs compound on exp 04 rules: fixed ['RE02'], broke ['LAW02', 'HR01', 'BNK05', 'MFG04', 'ECM03']
+
+- basal-1.5 (4.5B), +facts vs compound on exp 04 rules: fixed ['MED02', 'MED03', 'BNK05', 'ECM03'], broke ['INS01', 'BNK03', 'LOG02', 'MFG04']
+
+- basal-1.5-max, +facts vs compound on exp 04 rules: fixed ['BNK05', 'ITS04'], broke ['INS06', 'LOG05']
+
+## SOAM: one request with all questions vs one request per question (basal-serve, localhost)
+
+| model / path | questions | states | one request (median of per-state medians, ms) | separate requests (sum, ms) | speed-up | same argmax | max abs prob diff |
+|---|---|---|---|---|---|---|---|
+| basal-1.5-4.5B (Remek/basal-1.5-4.5B-MLX-8bit, basal-serve --mode mlx) | 5q | 12 | 367 | 785 | 2.14x | 12/12 | 4.2e-02 |
+| basal-1.5-4.5B (Remek/basal-1.5-4.5B-MLX-8bit, basal-serve --mode mlx) | 3q | 12 | 252 | 463 | 1.84x | 12/12 | 2.5e-02 |
+| basal-1.5-mini (Remek/basal-1.5-mini-MLX-8bit, basal-serve --mode mlx) | 5q | 12 | 123 | 302 | 2.46x | 12/12 | 4.1e-02 |
+| basal-1.5-mini (Remek/basal-1.5-mini-MLX-8bit, basal-serve --mode mlx) | 3q | 12 | 91 | 180 | 1.99x | 12/12 | 2.1e-02 |
+| basal-1.5-4.5B (Remek/basal-1.5-4.5B, basal-serve --mode mps) | 5q | 12 | 237 | 478 | 2.02x | 12/12 | 2.3e-02 |
+| basal-1.5-4.5B (Remek/basal-1.5-4.5B, basal-serve --mode mps) | 3q | 12 | 169 | 297 | 1.76x | 12/12 | 1.3e-02 |
+| basal-1.5-mini (Remek/basal-1.5-mini, basal-serve --mode mps) | 5q | 12 | 89 | 196 | 2.21x | 12/12 | 1.6e-02 |
+| basal-1.5-mini (Remek/basal-1.5-mini, basal-serve --mode mps) | 3q | 12 | 62 | 120 | 1.92x | 12/12 | 1.2e-02 |
+
+## Rule change: same message, changed rule (20 items, gold written before any run)
+
+| system | condition | original right | changed right | flipped correctly (both right) | answer changed | changed right among items right originally |
+|---|---|---|---|---|---|---|
+| basal-1.0-4.5B | rule in question (as in exp 03/04) | 12/20 | 15/20 | 7/20 | 7/20 | 7/12 |
+| basal-1.5-mini | rule in question (as in exp 03/04) | 13/20 | 12/20 | 5/20 | 5/20 | 5/13 |
+| basal-1.5 (4.5B) | rule in question (as in exp 03/04) | 12/20 | 13/20 | 5/20 | 5/20 | 5/12 |
+| basal-1.5-max | rule in question (as in exp 03/04) | 17/20 | 13/20 | 10/20 | 10/20 | 10/17 |
+| basal-1.5-mini | rule moved into the state | 14/20 | 13/20 | 7/20 | 7/20 | 7/14 |
+| basal-1.5 (4.5B) | rule moved into the state | 12/20 | 14/20 | 6/20 | 6/20 | 6/12 |
+| basal-1.5-max | rule moved into the state | 17/20 | 13/20 | 10/20 | 10/20 | 10/17 |
+| basal-1.5-mini | rule moved into the state + facts:auto | 13/20 | 13/20 | 7/20 | 8/20 | 7/13 |
+| basal-1.5 (4.5B) | rule moved into the state + facts:auto | 14/20 | 14/20 | 8/20 | 8/20 | 8/14 |
+| basal-1.5-max | rule moved into the state + facts:auto | 19/20 | 14/20 | 13/20 | 13/20 | 13/19 |
+| Jev 1.13, 2 orders | rule in question (as in exp 03/04) | 17/20 | 18/20 | 15/20 | 15/20 | 15/17 |
+| Jev 1.13, order 1 | rule in question | 17/20 | 17/20 | 14/20 | 14/20 | 14/17 |
+
+By block:
+
+- basal-1.0-4.5B, rule in question (as in exp 03/04): reading rules, exp 03 completeness (8): flipped correctly 6/8, same answer under both rules 2/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 1/12, same answer under both rules 11/12
+- basal-1.5-mini, rule in question (as in exp 03/04): reading rules, exp 03 completeness (8): flipped correctly 4/8, same answer under both rules 4/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 1/12, same answer under both rules 11/12
+- basal-1.5 (4.5B), rule in question (as in exp 03/04): reading rules, exp 03 completeness (8): flipped correctly 4/8, same answer under both rules 4/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 1/12, same answer under both rules 11/12
+- basal-1.5-max, rule in question (as in exp 03/04): reading rules, exp 03 completeness (8): flipped correctly 7/8, same answer under both rules 1/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 3/12, same answer under both rules 9/12
+- basal-1.5-mini, rule moved into the state: reading rules, exp 03 completeness (8): flipped correctly 3/8, same answer under both rules 5/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 4/12, same answer under both rules 8/12
+- basal-1.5 (4.5B), rule moved into the state: reading rules, exp 03 completeness (8): flipped correctly 5/8, same answer under both rules 3/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 1/12, same answer under both rules 11/12
+- basal-1.5-max, rule moved into the state: reading rules, exp 03 completeness (8): flipped correctly 7/8, same answer under both rules 1/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 3/12, same answer under both rules 9/12
+- basal-1.5-mini, rule moved into the state + facts:auto: reading rules, exp 03 completeness (8): flipped correctly 3/8, same answer under both rules 5/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 4/12, same answer under both rules 7/12
+- basal-1.5 (4.5B), rule moved into the state + facts:auto: reading rules, exp 03 completeness (8): flipped correctly 5/8, same answer under both rules 3/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 3/12, same answer under both rules 9/12
+- basal-1.5-max, rule moved into the state + facts:auto: reading rules, exp 03 completeness (8): flipped correctly 7/8, same answer under both rules 1/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 6/12, same answer under both rules 6/12
+- Jev 1.13, 2 orders, rule in question (as in exp 03/04): reading rules, exp 03 completeness (8): flipped correctly 8/8, same answer under both rules 0/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 7/12, same answer under both rules 5/12
+- Jev 1.13, order 1, rule in question: reading rules, exp 03 completeness (8): flipped correctly 8/8, same answer under both rules 0/8; number rules, exp 04 deadlines/amounts/eligibility (12): flipped correctly 6/12, same answer under both rules 6/12
+
+Per item (o = right, x = wrong; first letter original rule, second changed rule):
+
+| item | kind | change | basal-1.0-4.5B | basal-1.5-mini | basal-1.5 (4.5B) | basal-1.5-max | basal-1.5-mini [rule in state] | basal-1.5 (4.5B) [rule in state] | basal-1.5-max [rule in state] | basal-1.5-mini [rule in state + facts] | basal-1.5 (4.5B) [rule in state + facts] | basal-1.5-max [rule in state + facts] | Jev 1.13, 2 orders | Jev 1.13, order 1 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| K06 | conditional | bank account number required only for refund requests -> required for every request | oo | oo | oo | oo | xo | xo | oo | xo | xo | oo | oo | oo |
+| K14 | required_field | purchase date dropped from the required elements of a warranty claim | oo | oo | oo | oo | xo | oo | oo | xo | oo | oo | oo | oo |
+| K17 | required_field | moving date added as a third required element of an address change | oo | oo | oo | oo | oo | oo | oo | oo | oo | oo | oo | oo |
+| K18 | required_field | postal code no longer required in the new address | xo | xo | xo | oo | oo | xo | oo | oo | xo | oo | oo | oo |
+| K21 | required_field | date of the incident -> date and time of the incident | ox | ox | ox | ox | ox | ox | ox | ox | ox | ox | oo | oo |
+| K28 | conditional | supporting document for a NIP correction no longer required (the department checks CEIDG/KRS itself) | oo | xo | xo | oo | xo | oo | oo | xo | oo | oo | oo | oo |
+| K33 | conditional | card-payment exemption from the bank account requirement removed | oo | xo | ox | oo | xo | oo | oo | xo | oo | oo | oo | oo |
+| K38 | required_field | error message text / screenshot dropped from the required elements of an incident report | oo | oo | oo | oo | oo | oo | oo | oo | oo | oo | oo | oo |
+| ADM01 | deadline | appeal deadline 14 -> 7 days | ox | ox | ox | ox | ox | ox | ox | ox | xo | ox | oo | oo |
+| LAW04 | amount | flat-fee package minimum claim value 10 000 -> 5 000 PLN | xo | oo | oo | oo | oo | oo | oo | oo | oo | oo | oo | oo |
+| HR01 | eligibility | certificate exemption threshold 5 -> 8 years of accounting experience | ox | ox | ox | ox | ox | ox | ox | xx | ox | oo | oo | oo |
+| MED02 | deadline | referral validity for waiting-list entry 90 -> 120 days | oo | xo | xo | oo | oo | xo | oo | oo | oo | oo | oo | oo |
+| INS02 | amount | integral deductible 500 -> 600 PLN | xo | ox | xo | oo | oo | xo | oo | ox | oo | oo | oo | oo |
+| BNK03 | eligibility | minimum tenure with current employer 6 -> 9 months | ox | ox | ox | ox | ox | ox | ox | xo | ox | ox | ox | ox |
+| LOG01 | deadline | express delivery promise 2nd -> 1st working day after posting | xo | xo | xo | ox | xo | xo | ox | oo | xo | ox | xo | xo |
+| ITS04 | deadline | inactive account threshold 60 -> 90 days | xo | ox | xo | xo | ox | xo | xo | oo | xo | oo | oo | ox |
+| MFG01 | amount | acceptance number Ac 3 -> 2 for a 125-piece sample | xo | ox | ox | ox | ox | ox | ox | ox | ox | ox | oo | oo |
+| EDU03 | amount | income limit per family member 1 500 -> 1 600 PLN | xo | xo | xo | xo | oo | xo | xo | ox | ox | ox | xo | xo |
+| RE05 | deadline | objection deadline 30 -> 21 days | ox | ox | ox | ox | ox | ox | ox | ox | ox | oo | ox | ox |
+| ECM04 | deadline | non-delivery dispute deadline 30 -> 45 days from purchase | xo | xo | xo | xo | xo | xo | xo | xo | xo | xo | xo | xo |
+- amount (4): basal-1.0-4.5B 0; basal-1.5-mini 1; basal-1.5 (4.5B) 1; basal-1.5-max 2; basal-1.5-mini [rule in state] 3; basal-1.5 (4.5B) [rule in state] 1; basal-1.5-max [rule in state] 2; basal-1.5-mini [rule in state + facts] 1; basal-1.5 (4.5B) [rule in state + facts] 2; basal-1.5-max [rule in state + facts] 2; Jev 1.13, 2 orders 3; Jev 1.13, order 1 3
+- conditional (3): basal-1.0-4.5B 3; basal-1.5-mini 1; basal-1.5 (4.5B) 1; basal-1.5-max 3; basal-1.5-mini [rule in state] 0; basal-1.5 (4.5B) [rule in state] 2; basal-1.5-max [rule in state] 3; basal-1.5-mini [rule in state + facts] 0; basal-1.5 (4.5B) [rule in state + facts] 2; basal-1.5-max [rule in state + facts] 3; Jev 1.13, 2 orders 3; Jev 1.13, order 1 3
+- deadline (6): basal-1.0-4.5B 1; basal-1.5-mini 0; basal-1.5 (4.5B) 0; basal-1.5-max 1; basal-1.5-mini [rule in state] 1; basal-1.5 (4.5B) [rule in state] 0; basal-1.5-max [rule in state] 1; basal-1.5-mini [rule in state + facts] 3; basal-1.5 (4.5B) [rule in state + facts] 1; basal-1.5-max [rule in state + facts] 3; Jev 1.13, 2 orders 3; Jev 1.13, order 1 2
+- eligibility (2): basal-1.0-4.5B 0; basal-1.5-mini 0; basal-1.5 (4.5B) 0; basal-1.5-max 0; basal-1.5-mini [rule in state] 0; basal-1.5 (4.5B) [rule in state] 0; basal-1.5-max [rule in state] 0; basal-1.5-mini [rule in state + facts] 0; basal-1.5 (4.5B) [rule in state + facts] 0; basal-1.5-max [rule in state + facts] 1; Jev 1.13, 2 orders 1; Jev 1.13, order 1 1
+- required_field (5): basal-1.0-4.5B 3; basal-1.5-mini 3; basal-1.5 (4.5B) 3; basal-1.5-max 4; basal-1.5-mini [rule in state] 3; basal-1.5 (4.5B) [rule in state] 3; basal-1.5-max [rule in state] 4; basal-1.5-mini [rule in state + facts] 3; basal-1.5 (4.5B) [rule in state + facts] 3; basal-1.5-max [rule in state + facts] 4; Jev 1.13, 2 orders 5; Jev 1.13, order 1 5
+
+Movement of P(yes) from original to changed rule, signed so that positive = towards the new correct answer:
+
+| system | mean signed move | median absolute move | items moved towards the new answer |
+|---|---|---|---|
+| basal-1.0-4.5B | +0.276 | 0.154 | 16/20 |
+| basal-1.5-mini | +0.120 | 0.047 | 14/20 |
+| basal-1.5 (4.5B) | +0.281 | 0.103 | 16/20 |
+| basal-1.5-max | +0.445 | 0.283 | 18/20 |
+| basal-1.5-mini [rule in state] | +0.150 | 0.037 | 14/20 |
+| basal-1.5 (4.5B) [rule in state] | +0.316 | 0.090 | 18/20 |
+| basal-1.5-max [rule in state] | +0.439 | 0.262 | 18/20 |
+| basal-1.5-mini [rule in state + facts] | +0.214 | 0.067 | 15/20 |
+| basal-1.5 (4.5B) [rule in state + facts] | +0.423 | 0.423 | 16/20 |
+| basal-1.5-max [rule in state + facts] | +0.548 | 0.697 | 19/20 |
+| Jev 1.13, 2 orders | +0.622 | 0.802 | 20/20 |
+| Jev 1.13, order 1 | +0.616 | 0.800 | 20/20 |
+
+## Evidence spans (raw_evidence_mps_basal-1.5-4.5B.jsonl; rule moved into the state, "evidence": true)
+
+Items whose rule has no 'Reguła:' prefix keep the rule in the question and are left out here: ['ECM04', 'HR01']; n = 18 per version.
+
+- orig: right 11/18; top span overlaps the rule clause that is changed: 5/18; any of the (up to 3) spans overlaps: 16/18; no span returned: 0; median latency 210 ms
+- changed: right 13/18; top span overlaps the rule clause that is changed: 8/18; any of the (up to 3) spans overlaps: 17/18; no span returned: 0; median latency 199 ms
+- changed rule, answered right: top span on the changed clause 8/13; answered wrong: 0/5
+- orig: top span located in the rule paragraph 5, in the message 13
+- changed: top span located in the rule paragraph 5, in the message 13
+- changed rule, exp03_completeness: top span overlaps the changed clause 7/8; median top-span length 224 chars, median top-span probability 0.13
+- changed rule, exp04_rules: top span overlaps the changed clause 1/10; median top-span length 144 chars, median top-span probability 0.05
+- examples (changed rule): K06: "guła: zgłoszenie reklamacyjne jest kompletne, jeśli zawiera (1) numer zamówienia, (2) opis" || K14: "SN 88-2210-PL. Lodówka przestała chłodzić zamrażarkę. Proszę o szybki termin serwisu.
+
+Reg" || K17: "Reguła: wniosek o zmianę adresu jest kompletny, jeśli zawiera (1) numer klienta, (2) pełny" || K18: "Numer klienta 4402771. Przeprowadzam się na ul. Brzozową 3 w Rybniku.
+
+Reguła: wniosek o z" || K21: "głoszenie szkody (ubezpieczyciel):
+Polisa OC/AC nr PL-2026-778120. Zdarzenie 14.09.2026 na" || K28: "Reguła: wniosek o korektę faktury jest kompletny, jeśli zawiera (1) numer faktury, (2) wsk"
+
+## Spend
+
+- Jev calls: 82, total usage.cost $0.00175

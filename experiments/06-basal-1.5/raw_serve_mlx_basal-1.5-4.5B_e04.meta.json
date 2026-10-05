@@ -1,0 +1,23 @@
+{
+ "label": "basal-1.5-4.5B (Remek/basal-1.5-4.5B-MLX-8bit, basal-serve --mode mlx)",
+ "what": "latency",
+ "set": "e04",
+ "server_models": {
+  "models": [
+   {
+    "name": "basal-1.5-4.5B-MLX-8bit",
+    "release_date": "2026-10-05",
+    "description": "basal typed-decision model (choice / noul / score / act / multi), Polish and English",
+    "mode": "mlx",
+    "early_exit": []
+   }
+  ]
+ },
+ "url": "localhost",
+ "hardware": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.8"
+ }
+}
