@@ -1,0 +1,20 @@
+{"id": "K06", "answer_orig": 0, "answer_changed": 1, "note_orig": "nr zamówienia, opis wady, żądanie = naprawa; rachunek niewymagany (nie zwrot pieniędzy)", "note_changed": "rachunek wymagany zawsze, brak numeru rachunku"}
+{"id": "K14", "answer_orig": 1, "answer_changed": 0, "note_orig": "brak daty zakupu", "note_changed": "SN + opis usterki obecne"}
+{"id": "K17", "answer_orig": 0, "answer_changed": 1, "note_orig": "nr klienta + pełny adres z kodem 44-100", "note_changed": "brak daty przeprowadzki"}
+{"id": "K18", "answer_orig": 1, "answer_changed": 0, "note_orig": "brak kodu pocztowego", "note_changed": "ulica Brzozowa, nr 3, Rybnik obecne"}
+{"id": "K21", "answer_orig": 0, "answer_changed": 1, "note_orig": "polisa, data 14.09.2026, miejsce, opis, rejestracja sprawcy obecne", "note_changed": "brak godziny zdarzenia"}
+{"id": "K28", "answer_orig": 1, "answer_changed": 0, "note_orig": "błąd NIP, brak dokumentu potwierdzającego", "note_changed": "dokument niewymagany; nr faktury, błędne dane, poprawny NIP obecne"}
+{"id": "K33", "answer_orig": 0, "answer_changed": 1, "note_orig": "płatność kartą, rachunek niepotrzebny; nr zamówienia i lista produktów obecne", "note_changed": "rachunek wymagany także przy karcie, brak"}
+{"id": "K38", "answer_orig": 1, "answer_changed": 0, "note_orig": "'wyskakuje błąd' = pojawił się komunikat, brak treści/zrzutu", "note_changed": "system, opis, od wczoraj obecne; komunikat niewymagany"}
+{"id": "ADM01", "answer_orig": 0, "answer_changed": 1, "note_orig": "doręczenie 28.10 + 14 = 11.11 (święto, śr) -> 12.11 czw; nadano 12.11 = w terminie", "note_changed": "28.10 + 7 = 04.11 (śr, roboczy); nadano 12.11 = po terminie"}
+{"id": "LAW04", "answer_orig": 1, "answer_changed": 0, "note_orig": "WPS = 9 800 < 10 000", "note_changed": "9 800 >= 5 000 i <= 100 000, dłużnik przedsiębiorca"}
+{"id": "HR01", "answer_orig": 0, "answer_changed": 1, "note_orig": "09.2019-10.2026 = ok. 7 lat 1 mies. >= 5 -> certyfikat zbędny; C1 >= B2", "note_changed": "7 lat 1 mies. < 8, brak certyfikatu"}
+{"id": "MED02", "answer_orig": 1, "answer_changed": 0, "note_orig": "2026-07-20 -> 2026-10-19 = 91 dni > 90", "note_changed": "91 <= 120, dane kompletne"}
+{"id": "INS02", "answer_orig": 0, "answer_changed": 1, "note_orig": "512,40 > 500, trzeźwy, uprawnienia ok", "note_changed": "512,40 <= 600"}
+{"id": "BNK03", "answer_orig": 0, "answer_changed": 1, "note_orig": "DTI = 3000/7500 = 40% (nie przekracza); staż 16.03 -> 28.09 = 6 mies. 12 dni >= 6; brak zaległości", "note_changed": "staż 6 mies. 12 dni < 9"}
+{"id": "LOG01", "answer_orig": 1, "answer_changed": 0, "note_orig": "nadanie wt 10.11; 11.11 święto; 1. dzień rob. = 12.11, 2. = 13.11; doręczono 13.11 = nie później niż 2.", "note_changed": "doręczono 13.11 > 12.11 (1. dzień rob.); reklamacja 16.11 w 14 dniach"}
+{"id": "ITS04", "answer_orig": 0, "answer_changed": 1, "note_orig": "2026-09-10 -> 2026-11-20 = 71 dni > 60, status aktywny", "note_changed": "71 <= 90"}
+{"id": "MFG01", "answer_orig": 1, "answer_changed": 0, "note_orig": "3 niezgodne, nie > Ac=3 -> zwolnić", "note_changed": "3 > Ac=2 -> wstrzymać"}
+{"id": "EDU03", "answer_orig": 1, "answer_changed": 0, "note_orig": "6150/4 = 1537,50 > 1500", "note_changed": "1537,50 <= 1600"}
+{"id": "RE05", "answer_orig": 0, "answer_changed": 1, "note_orig": "doręczenie 12.10 + 30 = 11.11 (święto) -> 12.11; złożono 12.11 = w terminie", "note_changed": "12.10 + 21 = 02.11 (pn, roboczy); 12.11 po terminie"}
+{"id": "ECM04", "answer_orig": 1, "answer_changed": 0, "note_orig": "zakup 28.09 + 30 = 28.10; zgłoszono 29.10 = po terminie", "note_changed": "28.09 + 45 = 12.11; 29.10 w terminie; pozostałe warunki spełnione"}
