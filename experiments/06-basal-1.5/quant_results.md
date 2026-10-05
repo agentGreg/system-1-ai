@@ -100,10 +100,12 @@ size quantization does not make decisions faster: bf16 is the fastest, at twice 
 
 ## Conversion
 
-A plain `mlx_lm.convert` of basal-1.5 is silently wrong (mlx-lm 0.31.3, and the same code in 0.32.0): the base config stores `rope_theta` (1e6) in the
-transformers-5 `rope_parameters` field, mlx_lm reads only a top-level `rope_theta` and falls back to 10000. The model
-still loads and answers; on the first 40 e03 items it agreed with PyTorch 0.975 with |dp| up to 0.32.
-`convert_mlx.py` writes the top-level value. Remek's own MLX ports have it.
+The base config stores `rope_theta` (1e6) in the transformers-5 `rope_parameters` field; mlx-lm's Llama (0.31.3 and
+0.32.0) reads only a top-level `rope_theta` and falls back to 10000. This is known and documented upstream
+(basal `docs/HARDWARE.md`), and `basal-serve --mode mlx` overrides the value itself (`basal/engine.py`,
+`mlx_config_overrides`), so served decisions are not affected. Anything else that loads a plain `mlx_lm.convert`
+output through mlx-lm is: in our raw mlx-lm readout (`run_mlx.py`) of the first 40 e03 items, agreement with PyTorch
+was 0.975 with |dp| up to 0.32. `convert_mlx.py` writes the top-level value, as Remek's own MLX ports do.
 
 ## Published
 
