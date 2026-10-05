@@ -15,18 +15,19 @@ retraining?
   84.3% on both sets). basal-1.5-mini is level with basal-1.0-4.5B (85.1% vs 84.3%) at less than half its latency (47 vs 116 ms).
 - Rules with numbers stay the weak spot: 45/60 for max, 39/60 for 4.5B, 37/60 for mini on the experiment 04 rules,
   against 49 for Jev and 60 for Gemini.
-- `facts: auto` does not close that gap. As sent (rule in the question) it changes nothing for 4.5B and max (39 -> 39,
-  45 -> 45 of 60) and costs mini 4 items. With the rule moved into the state so the facts code also sees the
+- `facts: auto` does not close that gap. As sent (rule in the question) it is net zero for 4.5B and max (39 -> 39,
+  45 -> 45 of 60; a few items fixed, as many broken) and costs mini 4 of the 60. With the rule moved into the state so the facts code also sees the
   durations, max reaches 50/60 and 4.5B 41/60. Experiment 05's hand-written split + Python arithmetic gave
   basal-1.0-4.5B 59/60.
 - SOAM works on the Mac: one request with 5 questions is 2.0 to 2.5 times faster than 5 requests, with the same
   answers (probabilities differ by up to 0.04 in bf16 / 8-bit, the argmax never did).
-- Rule change: with the rule edited so that the correct answer flips (message unchanged), basal follows reading
-  changes (a required field added or dropped) fairly often (max 7/8, 4.5B 4/8; Jev 8/8) but mostly ignores number
+- Rule change: with the rule edited so that the correct answer flips (message unchanged), basal often follows reading
+  changes (a required field added or dropped: max 7/8, 4.5B 4/8, basal-1.0-4.5B 6/8; Jev 8/8) but mostly ignores number
   changes (deadline 14 -> 7 days, threshold 500 -> 600 zł): the answer stays the same on 9 to 11 of 12 such items
   (Jev: 5 of 12). Moving the rule into the state and adding `facts: auto` lifts max to 6/12 there (Jev 7/12).
-- On the Mac the plain PyTorch MPS forward is as fast as, or faster than, the MLX 8-bit ports on an M5 Max (4.5B:
-  114 ms vs 151 ms median per decision on experiment 03); `basal-serve --mode mps` is the fastest path (98 ms).
+- On an M5 Max the plain PyTorch MPS forward is faster than the MLX 8-bit ports for mini and 4.5B (4.5B: 114 ms vs
+  151 ms median per decision on experiment 03; max: MLX is faster, 245 vs 268 ms); for mini and 4.5B
+  `basal-serve --mode mps` is the fastest path (4.5B: 98 ms).
 
 ## Setup
 
@@ -95,9 +96,10 @@ different error profile at the same level).
 | basal-1.5-max | 40/40 | 40/40 | 39/40 | 37/39 | 18/19 | 20/20 | 62 |
 | Jev 1.13, 2 orders | 40/40 | 39/40 | 40/40 | 38/39 | 19/19 | 19/20 | 60 |
 
-The two categories that were new in experiment 03 (irritation, phishing) are where 1.5 gains most: basal-1.0-4.5B
+The two categories that were new in experiment 03 (irritation, phishing) are where 1.5 gains most, together with
+routing for the 4.5B model (+3 items each): basal-1.0-4.5B
 sent all five of its "slightly irritated" errors to "very irritated"; 1.5-max gets 18/19. Completeness rules do not move for
-the 4.5B model (33/39 in both versions) and get worse for mini (27/39).
+the 4.5B model (33/39 in both versions); mini gets 27/39, below basal-1.0-4.5B (33) but above basal-1.0-1.5B (23).
 
 **Per domain and type (experiment 04).** max: 17/17 in HR, clinic and logistics, its weakest domain is IT security
 (13/17, same as mini). 4.5B: 12/17 in IT security, 13/17 in moderation, 14-16 elsewhere. By type, max scores 82/96
@@ -107,7 +109,8 @@ ADM03, LAW01, ITS02, ECM04 (all rule items) and K02 (a completeness rule in expe
 
 **Calibration.** Reliability bins (`analysis_out.txt`): for max, the >= 0.99 bin holds 223 decisions at 100%
 accuracy and the 0.95-0.99 bin 87 at 96.6% (mean confidence 0.976). For basal-1.5 (4.5B) the 0.90-0.95 bin is overconfident (41 decisions at
-conf 0.930, accuracy 0.805), which is why its 0.913 threshold lets 10 errors through. Brier (top option): max 0.037,
+conf 0.930, accuracy 0.805), which accounts for 5 of the 10 errors its 0.913 threshold lets through (the other 5 are at >= 0.95: E34, P15, P18,
+ITS02, ITS03). Brier (top option): max 0.037,
 4.5B 0.083, mini 0.112, basal-1.0-4.5B 0.107, Jev 0.025.
 
 ## Latency on the Mac (median / p90 ms per decision, one question, both option orders, batch size 1)
@@ -140,7 +143,10 @@ dates, gaps between dates, date + durations mentioned in the text, VAT and money
 `run_basal.py --facts auto` calls the same function (`basal/facts.py` v1.5.0, vendored as `basal_facts.py`) on the
 state, which is exactly what the server does with the request. The function reads only the state. In our items the
 rule, and with it every duration ("14 dni", "30 dni"), is in the question, so we also ran the rule moved to the end of
-the state (5 of the 99 items have no "Reguła:" prefix and stay as they are).
+the state. 12 of the 99 items stay as they are under "rule in state": HR01-HR04 and INS04 phrase the rule inside the
+question without "Reguła", and MFG04, EDU01, ECM01-ECM05 use "Reguła z umowy:", "Reguła regulaminu:" or "Reguła
+Ochrony Kupującego:", which our split (on " Reguła:") does not match; for those 7, "rule in state + facts" equals
+"+ facts".
 
 | system | condition | exp 04 rules (60) | exp 03 completeness (39) | both (99) | accepted at 0.913 (errors) |
 |---|---|---|---|---|---|
@@ -154,6 +160,7 @@ the state (5 of the 99 items have no "Reguła:" prefix and stay as they are).
 | basal-1.5 (4.5B) | rule in state + facts:auto | 41/60 [56-79] | 33/39 | 74.7% [65-82] | 45 (2) |
 | basal-1.5-mini | compound | 37/60 [49-73] | 27/39 | 64.6% [55-73] | 28 (4) |
 | basal-1.5-mini | + facts:auto | 33/60 [42-67] | 28/39 | 61.6% [52-71] | 29 (4) |
+| basal-1.5-mini | rule in state | 39/60 [52-76] | 24/39 | 63.6% [54-72] | 26 (4) |
 | basal-1.5-mini | rule in state + facts:auto | 35/60 [46-70] | 23/39 | 58.6% [49-68] | 26 (3) |
 | basal-1.0-4.5B (control, not trained with facts) | + facts:auto | 39/60 | 33/39 | 72.7% | 20 (1) |
 | basal-1.0-4.5B (control) | rule in state + facts:auto | 43/60 | 29/39 | 72.7% | 20 (1) |
@@ -164,12 +171,12 @@ the state (5 of the 99 items have no "Reguła:" prefix and stay as they are).
 
 The facts block was added to 53 of the 99 states as sent (44 of the 60 experiment-04 items) and to 56 with the rule
 in the state. For basal-1.5 (4.5B), facts on the compound question fixed MED02, MED03, BNK05, ECM03 and broke INS01,
-BNK03, LOG02, MFG04 (net 0). The facts block helps where it can see the durations (rule in state: +4 items for max and
-4.5B against the rule-in-state baseline) but stays far from the hand-built decomposition with code: the block lists
+BNK03, LOG02, MFG04 (net 0). With the rule in the state the facts block adds 4 items of 60 for max and 4.5B against
+the rule-in-state baseline, and costs mini 4 (39 -> 35) but stays far from the hand-built decomposition with code: the block lists
 "date + 14 dni = ...", yet the model still has to apply the weekend/holiday shift, pick the right date and compare,
 and that is where it fails. **Answer to the key question: no, the built-in facts block does not close the rules gap
 without hand-written decompositions;** with the rule in the state it adds 5 items of 60 for max and 2 for 4.5B over the
-compound question, nothing when the rule stays in the question, and it costs mini a few items. On the completeness
+compound question, net zero when the rule stays in the question, and it costs mini a few items. On the completeness
 rules (no arithmetic) facts change nothing for 4.5B and max, as expected.
 
 ## SOAM: one request with several questions about one state
@@ -251,8 +258,8 @@ change, not a model question.
 spans point only into the state; HR01 and ECM04 have no "Reguła:" prefix and are left out, n = 18). Under the changed
 rule the top span overlaps the changed clause on 8/18 items, and some returned span (up to 3) on 17/18. By kind:
 completeness 7/8 for the top span, but these spans are long (median 224 characters) and usually cover most of the
-rule list; number rules 1/10: there the top span points at the case facts (dates, amounts) in the message, never at
-the changed number except for EDU03. Top-span probabilities are low (median 0.13 and 0.05). On the items answered
+rule list; number rules 1/10: there the top span points at the case facts (dates, amounts) in the message, on 8/10;
+BNK03's top span is another clause of the rule, and only EDU03's covers the changed number. Top-span probabilities are low (median 0.13 and 0.05). On the items answered
 wrong under the changed rule, the top span was never on the changed clause (0/5). Median request time with evidence was 199 ms
 (the same server answered experiment 03's shorter states in 98 ms without evidence; not a like-for-like comparison).
 
@@ -265,8 +272,8 @@ wrong under the changed rule, the top span was never on the changed clause (0/5)
 - **Not Werdykt.** Remigiusz Kinas's own Werdykt numbers (basal-1.5-max 0.773, basal-1.5 0.721, mini 0.607, Jev
   1.13 0.816, rules category about 0.34 for all basal models) come from a hidden, harder, different set (long
   documents, contracts, RAG, English, abstain) on an H100. Our numbers are higher and not comparable with his.
-- **Small n.** 198 + 204 items, 60 rule items, 20 rule-change items. A difference of 2-3 items between max and Jev is
-  inside the intervals. The rule-change and evidence counts are anecdotes with numbers, not estimates.
+- **Small n.** 198 + 204 items, 60 rule items, 20 rule-change items. Differences of 1-7 items between max and Jev
+  (exp 03: 194 vs 195; both sets: 381 vs 388) are inside the intervals. The rule-change and evidence counts are anecdotes with numbers, not estimates.
 - **Thresholds.** 0.913 / 0.744 are basal-1.0's and were not fitted for the 1.5 models or Jev; the 1.5 thresholds
   were certified by the author on descriptions-only prompts and yes/no questions with the bf16 engine. Our noul items
   carry option texts ("Tak, w terminie" / "Nie, po terminie"), not the default yes/no, so the validated case is only
@@ -277,8 +284,8 @@ wrong under the changed rule, the top span was never on the changed clause (0/5)
   GPU, so every latency number reported here comes from a separate pass (`run_latency_pass.sh`) with a watcher that
   logged other model processes every 2 s (`log_gpu_watch.txt`: one 2-second Python import at 11:07:51 UTC, no model
   run). Accuracy runs are deterministic and unaffected.
-- **facts:auto variants.** "Rule in state" is our move, not the original item format; for the 5 items without a
-  "Reguła:" prefix (and HR01, ECM04 among the rule-change items) it changes nothing.
+- **facts:auto variants.** "Rule in state" is our move, not the original item format; for the 12 rule items
+  listed in the facts section (and HR01, ECM04 among the rule-change items) it changes nothing.
 - **Evidence** is marked experimental by the author; we ran it on one model and 18 items.
 
 ## Spend

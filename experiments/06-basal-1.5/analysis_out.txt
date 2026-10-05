@@ -361,12 +361,6 @@ Items whose rule has no 'Reguła:' prefix keep the rule in the question and are 
 - changed: top span located in the rule paragraph 5, in the message 13
 - changed rule, exp03_completeness: top span overlaps the changed clause 7/8; median top-span length 224 chars, median top-span probability 0.13
 - changed rule, exp04_rules: top span overlaps the changed clause 1/10; median top-span length 144 chars, median top-span probability 0.05
-- examples (changed rule): K06: "guła: zgłoszenie reklamacyjne jest kompletne, jeśli zawiera (1) numer zamówienia, (2) opis" || K14: "SN 88-2210-PL. Lodówka przestała chłodzić zamrażarkę. Proszę o szybki termin serwisu.
-
-Reg" || K17: "Reguła: wniosek o zmianę adresu jest kompletny, jeśli zawiera (1) numer klienta, (2) pełny" || K18: "Numer klienta 4402771. Przeprowadzam się na ul. Brzozową 3 w Rybniku.
-
-Reguła: wniosek o z" || K21: "głoszenie szkody (ubezpieczyciel):
-Polisa OC/AC nr PL-2026-778120. Zdarzenie 14.09.2026 na" || K28: "Reguła: wniosek o korektę faktury jest kompletny, jeśli zawiera (1) numer faktury, (2) wsk"
 
 ## Spend
 

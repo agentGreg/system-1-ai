@@ -481,8 +481,7 @@ def rule_change_section():
             print(f"- changed rule, {b}: top span overlaps the changed clause {sum(r['top_span_overlaps_clause'] for r in bb)}"
                   f"/{len(bb)}; median top-span length {st.median(len(r['evidence'][0]['text']) for r in bb):.0f} chars, "
                   f"median top-span probability {st.median(r['evidence'][0]['probability'] for r in bb):.2f}")
-        print("- examples (changed rule): " + " || ".join(
-            f"{r['base_id']}: \"{r['evidence'][0]['text'][:90]}\"" for r in ch[:6] if r["evidence"]))
+
 
 
 if __name__ == "__main__":
