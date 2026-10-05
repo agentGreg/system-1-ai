@@ -1,0 +1,9 @@
+{
+ "bf16": true,
+ "8bit": true,
+ "6bit": true,
+ "fp4": false,
+ "mixed-4-6": false,
+ "4bit-g32": false,
+ "4bit": false
+}

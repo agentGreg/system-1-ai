@@ -1,0 +1,27 @@
+{
+ "system": "Remek/basal-1.5-mini-MLX-8bit",
+ "path": "Remek/basal-1.5-mini-MLX-8bit@6ea29c4",
+ "quantization": {
+  "group_size": 64,
+  "bits": 8,
+  "mode": "affine"
+ },
+ "engine": "mlx_lm",
+ "orders": 2,
+ "set": "e03",
+ "facts": "off",
+ "rule_in_state": false,
+ "temperatures": {
+  "choice": 1.1387886347566916,
+  "noul": 1.3939382634489992,
+  "score": 1.5422108254079405
+ },
+ "load_s": 0.21452791600313503,
+ "mlx": "0.32.3",
+ "hardware": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.8"
+ }
+}

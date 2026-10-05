@@ -1,0 +1,10 @@
+done torch-bf16 extras 12:09:32
+done torch-fp32 12:10:39
+done mlx-bf16_mini 12:11:26
+done mlx-8bit_mini 12:12:17
+done mlx-fp4_mini 12:13:08
+done mlx-6bit_mini 12:13:59
+done mlx-4bit_mini 12:14:48
+done mlx-4bit-g32_mini 12:15:37
+done mlx-mixed-4-6_mini 12:16:28
+ALLDONE

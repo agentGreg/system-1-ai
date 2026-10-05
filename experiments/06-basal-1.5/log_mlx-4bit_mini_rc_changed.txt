@@ -1,0 +1,21 @@
+K06@changed gold=1 pred=0 p=0.729 49ms
+K14@changed gold=0 pred=0 p=0.776 43ms
+K17@changed gold=1 pred=0 p=0.744 47ms
+K18@changed gold=0 pred=0 p=0.815 41ms
+K21@changed gold=1 pred=0 p=0.766 56ms
+K28@changed gold=0 pred=0 p=0.795 48ms
+K33@changed gold=1 pred=0 p=0.664 48ms
+K38@changed gold=0 pred=0 p=0.854 48ms
+ADM01@changed gold=1 pred=0 p=0.719 56ms
+LAW04@changed gold=0 pred=0 p=0.686 56ms
+HR01@changed gold=1 pred=0 p=0.643 56ms
+MED02@changed gold=0 pred=0 p=0.799 57ms
+INS02@changed gold=1 pred=0 p=0.612 57ms
+BNK03@changed gold=1 pred=0 p=0.749 58ms
+LOG01@changed gold=0 pred=0 p=0.650 56ms
+ITS04@changed gold=1 pred=1 p=0.653 48ms
+MFG01@changed gold=0 pred=1 p=0.720 56ms
+EDU03@changed gold=0 pred=0 p=0.707 50ms
+RE05@changed gold=1 pred=0 p=0.646 49ms
+ECM04@changed gold=0 pred=0 p=0.597 60ms
+load 0.2s  acc 0.500

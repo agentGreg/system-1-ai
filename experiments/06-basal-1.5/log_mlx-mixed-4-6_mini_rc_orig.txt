@@ -1,0 +1,21 @@
+K06@orig gold=0 pred=0 p=0.777 49ms
+K14@orig gold=1 pred=0 p=0.698 48ms
+K17@orig gold=0 pred=0 p=0.913 48ms
+K18@orig gold=1 pred=0 p=0.870 45ms
+K21@orig gold=0 pred=0 p=0.850 56ms
+K28@orig gold=1 pred=0 p=0.797 50ms
+K33@orig gold=0 pred=0 p=0.615 51ms
+K38@orig gold=1 pred=0 p=0.783 49ms
+ADM01@orig gold=0 pred=0 p=0.760 58ms
+LAW04@orig gold=1 pred=0 p=0.770 56ms
+HR01@orig gold=0 pred=0 p=0.647 57ms
+MED02@orig gold=1 pred=0 p=0.866 58ms
+INS02@orig gold=0 pred=0 p=0.762 58ms
+BNK03@orig gold=0 pred=0 p=0.819 58ms
+LOG01@orig gold=1 pred=0 p=0.682 55ms
+ITS04@orig gold=0 pred=1 p=0.726 48ms
+MFG01@orig gold=1 pred=1 p=0.870 56ms
+EDU03@orig gold=1 pred=0 p=0.747 50ms
+RE05@orig gold=0 pred=0 p=0.693 50ms
+ECM04@orig gold=1 pred=0 p=0.719 60ms
+load 0.2s  acc 0.500

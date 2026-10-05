@@ -1,0 +1,2 @@
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|██████████| 11/11 [00:00<00:00, 3142.87it/s]
+basal: model Remek/basal-1.5-mini-MLX-8bit mode mlx ready in 1s on port 8017

@@ -1,0 +1,32 @@
+{
+ "system": "Remek/basal-1.5-mini-MLX-fp4",
+ "path": "Remek/basal-1.5-mini-MLX-fp4@3ec0520",
+ "quantization": {
+  "group_size": 16,
+  "bits": 4,
+  "mode": "nvfp4"
+ },
+ "engine": "mlx_lm",
+ "orders": 2,
+ "set": "rules99",
+ "facts": "auto",
+ "rule_in_state": false,
+ "calibration_file": "CALIBRATION.mlx.json",
+ "temperatures": {
+  "choice": 1.0750164712103167,
+  "noul": 1.1703505659917797,
+  "score": 1.5422108254079405
+ },
+ "thresholds": {
+  "0.01": 0.9546241492914076,
+  "0.05": 0.7629656203142733
+ },
+ "load_s": 0.17594416698557325,
+ "mlx": "0.32.3",
+ "hardware": {
+  "chip": "Apple M5 Max",
+  "ram_gb": 128,
+  "macos": "26.6.2",
+  "python": "3.12.8"
+ }
+}

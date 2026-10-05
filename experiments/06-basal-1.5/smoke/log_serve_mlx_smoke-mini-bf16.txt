@@ -1,0 +1,1 @@
+basal: model ~/models/basal-mlx/basal-1.5-mini-MLX-bf16 mode mlx ready in 0s on port 8017
